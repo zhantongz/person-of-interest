@@ -397,5 +397,12 @@ Program resources are not included because of their large sizes and the inabilit
 Over all, this project contains 1056 lines of Java codes.
 % program structure and document
 \chapter{Program Structure}
+The detailed description of classes, constants, methods and variables are listed below, following the alphabetical order of class names. The purpose and the parameter and return value for methods are described in order to provide a development guide for others.
 \input{./tex/prg.tex}
+\chapter{Program Playability}
+\chapter{Program Expansibility}
+In the process of designing and programming this game, the benefits of letting users to modify and expand the game plot are noticed. The game is programmed that most resources, such as the names of POIs, the descriptions, dangers and arrival messages of missions, the names, cities, countries and descriptions of locations and the names, descriptions, answers and their types, chances, points, punishments and time used of problems, are obtained from CSV files which are easy to modify with spreadsheet softwares. The program portion of the CSV reading is referred to and modified from \url{http://www.mkyong.com/java/how-to-read-and-parse-csv-file-in-java/}, whose author is mkyong. However, the expansibility can be improved if the details of minor situations could be saved in CSV files, while my limited experience and ability stopped me.
+
+The program codes are with comments explaining the purpose of the classes, constants, variables and methods. One with basic knowledge of Java could modify the program easily. There are some variables created but not really used as they are designed because of time and ability limitation for this project. Those variable are useful for future development when the game has more complex plot. The minor situations can be coded for each rank following the example.
+\chapter{Improvement with more Knowledge}
 \end{document}
