@@ -1,0 +1,114 @@
+\documentclass[letterpaper,12pt]{article}
+% This is the proposal of the final project for Computer Science 20 at Western Canada High School by Zhantong Zhang in the December of 2013.
+
+\newcommand{\dotS}{\hspace{-3pt}$\bullet$ \hspace{2.5pt}}
+\usepackage[pdftex]{graphicx}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage{xcolor}
+
+\begin{document}
+\title{\textit{Person of Interest}
+\\
+Project Proposal
+}
+\date{December 9, 2013}
+\author{Tony Zhang}
+\maketitle
+
+\section{Description}
+	This project in Java is to build a role-playing game for users over 14 years old based on skills learned in Computer Science 20. In this game, the user is a special agent working for a secret organization to ensure the world security. The user needs to act accordingly toward different targets/missions with his/her knowledge. The mission is determined by the person(s) of interest (POI). POI could be victim(s) or criminal(s). The user should target and monitor POI to prevent the crime(s). The organization has a rank from \textit{Constable} to \textit{Commissioner}, although the user can achieve \textit{Superintendent} at the most. The user would move in the virtual world and solve puzzles and problems. There are missions that may cause the user's death in the virtual world, and, the user should not do things that kill him/her or the game is over. The objective for the user is to become an \textit{Inspector} for a specific region and ensure the security for six months, then, the user becomes a \textit{Superintendent} finishing the game. The game is designed to be over in less than four hours.
+	\subsection{Features}
+	The project shall have following features:
+	\begin{itemize}
+		\item Let the user choose the base location (Canada for Americas, China for Asia-Pacific and Middle East or France for Europe and Africa).
+		\item Generate POI mission, specifying location, objectives, potential dangers
+		\item Let the user accept POI mission.
+		\item Provide transportation to the POI.
+		\item The user can arrest/protect the POI according to POI's identity.
+		\item The user need to solve puzzles/problems to find the POI.
+		\item There is a point system to measure the user's ability.
+		\item Determine if a mission is success, complete or failed.
+		\item Promotion according to the point system; the rank for the user includes (from lowest to highest) \textit{Constable}, \textit{Corporal}, \textit{Sergeant}, \textit{Staff Sergeant}, \textit{Sergeant Major}, \textit{Inspector}. The higher rank includes \textit{Superintendent}, \textit{Deputy Commissioner} and \textit{Commissioner}.
+		\item The user will follow the order from the higher officers and may choose to follow suggestions of the lower/same officers.
+		\item The user can save his/her character and mission, but the user need to restart his/her mission if come back. Saving the mission progress may be beyond current skills.
+	\end{itemize}
+	The project \emph{may} have following features to enhance user experience:
+	\begin{itemize}
+		\item The mission progress can be saved.
+		\item The mission can have weight according to the difficulty.
+		\item The user can use firearms and the ability to use firearms is improving in the missions.
+		\item There can be a mode of learning. The rank for the user would be \textit{Cadet}.
+		\item There can be more complex plot like undercover operations.
+		\item The user can change the location after.
+		\item The user can have a partner to help him/her.
+		\item There can be more than one way to finish the game with different outcomes.
+	\end{itemize}
+
+\section{Timeline}
+        \begin{tabular}{r | @{\dotS} l}
+		        December 8, 2013		&	Finish the proposal and analysis					        	\\
+                December 9, 2013		&	Start preliminary design								        \\
+                December 10 - 11, 2013	&	Finish the design, the welcome page and location choice	        \\
+         	December 11 - 12, 2013	&	Finish the loading and saving						        	\\
+                December 14 - 15, 2013	&	Finish the POI generation							        	\\
+                December 19, 2013		&	Finish puzzles/problems							            	\\
+                December 22, 2013		&	Finish the mission procedures						        	\\
+                December 25, 2013		&	Finish determining if the mission is successful		        	\\
+                December 27, 2013		&	Finish the promotion system						            	\\
+                December 28, 2013		&	Finish the POI generation							        	\\
+                December 31, 2013		&	Finish improved user interface and start fixing minor errors	\\
+		January 1 - 5, 2013		&	Fix problems and add features if time permitted		            \\
+		        January 5, 2014			&	Finish all things \& Start final test					       	\\
+		        January 8, 2014			&	Complete
+        \end{tabular}
+
+\section{Skills Used}
+	This project is written in Java. The basic control structures, variables and some objects are presented through the whole program. The following specific programming skills learned in the course will be used in the project:
+	\begin{itemize}
+		\item Random number generation is used in: 
+			\begin{itemize}
+				\item the generation of POI missions
+				\item the determination of random accidents
+				\item brute-forcing solving puzzles
+			\end{itemize}
+		\item File input \& output (including \texttt{Serializable} object file) is used in:
+		    \begin{itemize}
+		        \item saving and loading games
+		    \end{itemize}
+		\item Methods is used extensively in:
+			\begin{itemize}
+				\item the user's movement in the virtual world
+				\item the change of user's status
+				\item generating, solving and checking puzzles and problems
+				\item determining the user's outcomes
+				\item determining the mission's status
+				\item saving and loading games
+				\item several decision making like suggestions and orders
+			\end{itemize}
+		\item Class is used in:
+			\begin{itemize}
+				\item the user's status, name, location, etc.
+				\item the mission's status, puzzles, etc.
+				\item POI's properties including name, location, etc.
+				\item the superiors/subordinates
+				\item the location's properties
+			\end{itemize}
+		\item Array is used extensively in:
+			\begin{itemize}
+				\item the ranks of the organization
+				\item timing for the mission
+				\item POIs list
+			\end{itemize}
+	\end{itemize}
+
+\section{Success\ Indicators}
+    When this project is done successfully, it would have a welcome page and a menu that let player to choose to start or load saved game. The user will then be required to create his/her character with name and location. The user will start from a constable. A POI mission is generated having the POI, the location and the dangers. He/she will get a mission and complete it. In the mission, the user need to solve puzzles and problems related to the POI in order to complete the mission and get points. The points are used to promote the user. The user will get another mission and complete it. The mission will have random accidents that can kill/harm the user. The user will get more missions until he/she becomes an inspector. As an inspector, the user will complete a big mission for 6 months. After the successful completion, the user wins and the game over. The user can save his/her character and the mission he/she works on. But, the mission may not be saved as its progress.
+
+	\vfill
+
+	\begin{flushright}
+		\makebox[2.5in]{\hrulefill}\\
+		Teacher's Approval
+	\end{flushright}
+
+\end{document}

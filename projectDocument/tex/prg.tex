@@ -1,0 +1,2360 @@
+\sloppy
+\section{Package personOfInterest}{
+\label{personOfInterest}\hskip -.05in
+\hbox to \hsize{\textit{ Package Contents\hfil Page}}
+\vskip .13in
+\hbox{{\bf  Classes}}
+\entityintro{Agent}{personOfInterest.Agent}{Agent of the organization}
+\entityintro{CaughtInTheAct}{personOfInterest.CaughtInTheAct}{}
+\entityintro{Game}{personOfInterest.Game}{Main game program}
+\entityintro{Location}{personOfInterest.Location}{Location}
+\entityintro{Mission}{personOfInterest.Mission}{Mission of the player}
+\entityintro{Person}{personOfInterest.Person}{Person including POI, agents of the organization, and others}
+\entityintro{Player}{personOfInterest.Player}{Player who play the game in the virtual world}
+\entityintro{POI}{personOfInterest.POI}{Persons of Interest}
+\entityintro{Problem}{personOfInterest.Problem}{Problem that will occur in a mission}
+\entityintro{Saved}{personOfInterest.Saved}{Saved file for the game}
+\vskip .1in
+\vskip .1in
+\section{\label{personOfInterest.Agent}\index{Agent}Class Agent}{
+\vskip .1in 
+Agent of the organization\\
+ref: \url{http://docs.oracle.com/javase/tutorial/java/javaOO/index.html}\vskip .1in 
+\subsection{Declaration}{
+\small public class Agent
+\\ {\bf  extends} personOfInterest.Person
+\refdefined{personOfInterest.Person}}
+\subsection{All known subclasses}{Player\small{\refdefined{personOfInterest.Player}}}
+\subsection{Field summary}{
+\begin{verse}
+{\bf base} base location of an agent\\
+{\bf calendar} calendar of an agent\\
+{\bf currentDay} current day in the calendar\\
+{\bf id} an agent's id number\\
+{\bf rank} rank of an agent\\
+{\bf RANKS} ranks' list\\ref: \url{http://java.about.com/od/understandingdatatypes/a/Using-Constants.htm}\\
+{\bf serialVersionUID} serialization id\\
+\end{verse}
+}
+\subsection{Constructor summary}{
+\begin{verse}
+{\bf Agent(String, int, Location)} Construct a new agent with specified name, rank and base location and a random id\\
+{\bf Agent(String, int, Location, int)} Construct a new agent with specified name, rank and base location and a random id\\
+\end{verse}
+}
+\subsection{Method summary}{
+\begin{verse}
+{\bf displayInfo()} Display an agent's info including rank, name, base and ID\\
+{\bf passDay()} Pass current day\\
+{\bf passDays(int)} Pass a certain number of days\\
+{\bf resetCal()} Reset calendar of an agent\\
+{\bf resetCal(int)} Reset calendar of an agent to a certain period\\
+\end{verse}
+}
+\subsection{Fields}{
+\begin{itemize}
+\item{
+\index{serialVersionUID}
+\label{personOfInterest.Agent.serialVersionUID}private static final long {\bf  serialVersionUID}\begin{itemize}
+\item{\vskip -.9ex 
+serialization id}
+\end{itemize}
+}
+\item{
+\index{base}
+\label{personOfInterest.Agent.base} Location {\bf  base}\begin{itemize}
+\item{\vskip -.9ex 
+base location of an agent}
+\end{itemize}
+}
+\item{
+\index{id}
+\label{personOfInterest.Agent.id} int {\bf  id}\begin{itemize}
+\item{\vskip -.9ex 
+an agent's id number}
+\end{itemize}
+}
+\item{
+\index{rank}
+\label{personOfInterest.Agent.rank} int {\bf  rank}\begin{itemize}
+\item{\vskip -.9ex 
+rank of an agent}
+\end{itemize}
+}
+\item{
+\index{RANKS}
+\label{personOfInterest.Agent.RANKS}public static final java.lang.String {\bf  RANKS}\begin{itemize}
+\item{\vskip -.9ex 
+ranks' list\\ref: \url{http://java.about.com/od/understandingdatatypes/a/Using-Constants.htm}}
+\end{itemize}
+}
+\item{
+\index{calendar}
+\label{personOfInterest.Agent.calendar} int {\bf  calendar}\begin{itemize}
+\item{\vskip -.9ex 
+calendar of an agent}
+\end{itemize}
+}
+\item{
+\index{currentDay}
+\label{personOfInterest.Agent.currentDay} int {\bf  currentDay}\begin{itemize}
+\item{\vskip -.9ex 
+current day in the calendar}
+\end{itemize}
+}
+\end{itemize}
+}
+\subsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{Agent(String, int, Location)}
+{\bf  Agent}\\
+\texttt{public\ {\bf  Agent}(\texttt{java.lang.String} {\bf  inName},
+\texttt{int} {\bf  inRank},
+\texttt{Location} {\bf  inBase})
+\label{personOfInterest.Agent(java.lang.String, int, personOfInterest.Location)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Construct a new agent with specified name, rank and base location and a random id
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{inName} -- specified name for the new agent}
+   \item{
+\texttt{inRank} -- specified rank for the new agent}
+   \item{
+\texttt{inBase} -- specified base location for the new agent}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{Agent(String, int, Location, int)}
+{\bf  Agent}\\
+\texttt{public\ {\bf  Agent}(\texttt{java.lang.String} {\bf  inName},
+\texttt{int} {\bf  inRank},
+\texttt{Location} {\bf  inBase},
+\texttt{int} {\bf  inId})
+\label{personOfInterest.Agent(java.lang.String, int, personOfInterest.Location, int)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Construct a new agent with specified name, rank and base location and a random id
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{inName} -- specified name for the new agent}
+   \item{
+\texttt{inRank} -- specified rank for the new agent}
+   \item{
+\texttt{inBase} -- specified base location for the new agent}
+   \item{
+\texttt{inId} -- specified id number for the new agent}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{displayInfo()}
+{\bf  displayInfo}\\
+\texttt{public void\ {\bf  displayInfo}()
+\label{personOfInterest.Agent.displayInfo()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Display an agent's info including rank, name, base and ID
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{passDay()}
+{\bf  passDay}\\
+\texttt{public void\ {\bf  passDay}()
+\label{personOfInterest.Agent.passDay()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Pass current day
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{passDays(int)}
+{\bf  passDays}\\
+\texttt{public void\ {\bf  passDays}(\texttt{int} {\bf  days})
+\label{personOfInterest.Agent.passDays(int)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Pass a certain number of days
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{days} -- the number of days passed}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{resetCal()}
+{\bf  resetCal}\\
+\texttt{public void\ {\bf  resetCal}()
+\label{personOfInterest.Agent.resetCal()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Reset calendar of an agent
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{resetCal(int)}
+{\bf  resetCal}\\
+\texttt{public void\ {\bf  resetCal}(\texttt{int} {\bf  days})
+\label{personOfInterest.Agent.resetCal(int)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Reset calendar of an agent to a certain period
+}
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsection{Members inherited from class Person }{
+\texttt{personOfInterest.Person} {\small 
+\refdefined{personOfInterest.Person}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  displayInfo}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  ifAlive}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  kill}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  location}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  name}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{private static final {\bf  serialVersionUID}}%end signature
+}%end item
+\end{itemize}
+}
+}
+\section{\label{personOfInterest.CaughtInTheAct}\index{CaughtInTheAct}Class CaughtInTheAct}{
+\vskip .1in 
+\subsection{Declaration}{
+\small  class CaughtInTheAct
+\\ {\bf  extends} personOfInterest.Mission
+\refdefined{personOfInterest.Mission}}
+\subsection{Constructor summary}{
+\begin{verse}
+{\bf CaughtInTheAct(POI, String, Location, int, int)} \\
+\end{verse}
+}
+\subsection{Method summary}{
+\begin{verse}
+{\bf minorSituation(int)} \\
+\end{verse}
+}
+\subsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{CaughtInTheAct(POI, String, Location, int, int)}
+{\bf  CaughtInTheAct}\\
+\texttt{public\ {\bf  CaughtInTheAct}(\texttt{POI} {\bf  person},
+\texttt{java.lang.String} {\bf  inname},
+\texttt{Location} {\bf  inloc},
+\texttt{int} {\bf  days},
+\texttt{int} {\bf  inPoints}) throws java.io.FileNotFoundException, java.io.IOException, java.lang.ClassNotFoundException
+\label{personOfInterest.CaughtInTheAct(personOfInterest.POI, java.lang.String, personOfInterest.Location, int, int)}}%end signature
+}%end item
+\end{itemize}
+}
+\subsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{minorSituation(int)}
+{\bf  minorSituation}\\
+\texttt{public void\ {\bf  minorSituation}(\texttt{int} {\bf  index}) throws java.lang.InterruptedException
+\label{personOfInterest.CaughtInTheAct.minorSituation(int)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Mission{\small \refdefined{personOfInterest.Mission}} }
+
+Execute a customized minor situation
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{index} -- the index of the minor situation}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsection{Members inherited from class Mission }{
+\texttt{personOfInterest.Mission} {\small 
+\refdefined{personOfInterest.Mission}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{ {\bf  arriveMessage}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  budget}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  calendar}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  complete}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  completed}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public boolean {\bf  completing}() throws java.lang.InterruptedException, java.lang.ClassNotFoundException, java.io.IOException
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  dangers}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  description}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public static Mission {\bf  generateFinalMission}(\texttt{int} {\bf  area}) throws java.io.FileNotFoundException, java.io.IOException, java.lang.ClassNotFoundException
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public static Mission {\bf  generateMission}(\texttt{int} {\bf  area},
+\texttt{int} {\bf  rank}) throws java.io.FileNotFoundException, java.io.IOException, java.lang.ClassNotFoundException
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  location}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  minorNum}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  minorSituation}(\texttt{int} {\bf  index}) throws java.lang.InterruptedException
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  name}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  player}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  poi}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  points}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  problems}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  rank}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public static String {\bf  replaceName}(\texttt{java.lang.String} {\bf  s},
+\texttt{Mission} {\bf  mission})
+}%end signature
+}%end item
+\end{itemize}
+}
+}
+\section{\label{personOfInterest.Game}\index{Game}Class Game}{
+\vskip .1in 
+Main game program\vskip .1in 
+\subsection{Declaration}{
+\small public class Game
+\\ {\bf  extends} java.lang.Object
+\refdefined{java.lang.Object}}
+\subsection{Field summary}{
+\begin{verse}
+{\bf gameCal} game calendar\\
+{\bf input} scanner that reads from keyboard\\
+{\bf locArea} \\
+{\bf newMission} if the player wants to start a new mission\\
+{\bf poiArea} \\
+{\bf savedName} saved name for saving game\\
+{\bf savedPath} saved path for saving game\\
+\end{verse}
+}
+\subsection{Constructor summary}{
+\begin{verse}
+{\bf Game()} \\
+\end{verse}
+}
+\subsection{Method summary}{
+\begin{verse}
+{\bf addLinebreaks(String)} Break lines in a long string with maximum length of 80\\
+{\bf addLinebreaks(String, int)} Break lines in a long string to make display nicer\\ref: \url{http://stackoverflow.com/questions/7528045/large-string-split-into-lines-with-maximum-length-in-java}\\
+{\bf displayDate()} Display the date today (as in the game)\\
+{\bf help()} Display help information\\
+{\bf ifGoodCalendar(int\lbrack \rbrack )} Determine if a player complete his/her mission in a certain time\\
+{\bf input(String)} Get the user's input with space as the delimiter\\
+{\bf input(String, int, int)} Check if the user's input is valid and return a valid data\\
+{\bf inputLn(String)} Get the user's input with line break as the delimiter\\
+{\bf isGameOver(Player)} Determine if the game is over\\
+{\bf loadFile(String)} Load a serialized file\\
+{\bf locs()} Update location information from the csv file\\
+{\bf main(String\lbrack \rbrack )} Main program\\
+{\bf msts()} Update location information from the csv file\\
+{\bf passDay()} Add 1 day to the calendar\\
+{\bf passDays(int)} Add a certain number of days to the game calendar\\
+{\bf pois()} Update location information from the csv file\\
+{\bf prbs()} Update problems\\
+{\bf processUserInput(Problem, Player)} Process the user's input that intends for a problem\\
+{\bf processUserInput(String, Player)} Process the user's input\\
+{\bf randomID()} Generate a 9-digits id number for agent id, mission id, etc.\\
+{\bf randomNum(int, int)} Generate a random number in a certain range\\
+{\bf saveGame(Player)} Save the game\\
+{\bf scciSeal()} Print SCCI logo\\
+{\bf showStartPage()} Show the start page with ASCII art\\
+{\bf sleep(int)} Pause the program for a period of time while outputing three dots\\ref: \url{http://docs.oracle.com/javase/tutorial/essential/concurrency/sleep.html}\\
+{\bf takeChance(double)} \\
+{\bf takeChance(int)} \\
+{\bf toBoolean(int)} Cast int to boolean\\
+{\bf transport(Agent, int, Location, Location)} Transport an agent from his/her current location to a location requested through a certain way\\
+{\bf typeString(String)} Show a string in typewriter style\\
+\end{verse}
+}
+\subsection{Fields}{
+\begin{itemize}
+\item{
+\index{input}
+\label{personOfInterest.Game.input}static java.util.Scanner {\bf  input}\begin{itemize}
+\item{\vskip -.9ex 
+scanner that reads from keyboard}
+\end{itemize}
+}
+\item{
+\index{savedPath}
+\label{personOfInterest.Game.savedPath}static java.lang.String {\bf  savedPath}\begin{itemize}
+\item{\vskip -.9ex 
+saved path for saving game}
+\end{itemize}
+}
+\item{
+\index{savedName}
+\label{personOfInterest.Game.savedName}static java.lang.String {\bf  savedName}\begin{itemize}
+\item{\vskip -.9ex 
+saved name for saving game}
+\end{itemize}
+}
+\item{
+\index{gameCal}
+\label{personOfInterest.Game.gameCal}static java.util.Calendar {\bf  gameCal}\begin{itemize}
+\item{\vskip -.9ex 
+game calendar}
+\end{itemize}
+}
+\item{
+\index{locArea}
+\label{personOfInterest.Game.locArea}static int {\bf  locArea}}
+\item{
+\index{poiArea}
+\label{personOfInterest.Game.poiArea}static int {\bf  poiArea}}
+\item{
+\index{newMission}
+\label{personOfInterest.Game.newMission}static boolean {\bf  newMission}\begin{itemize}
+\item{\vskip -.9ex 
+if the player wants to start a new mission}
+\end{itemize}
+}
+\end{itemize}
+}
+\subsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{Game()}
+{\bf  Game}\\
+\texttt{public\ {\bf  Game}()
+\label{personOfInterest.Game()}}%end signature
+}%end item
+\end{itemize}
+}
+\subsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{addLinebreaks(String)}
+{\bf  addLinebreaks}\\
+\texttt{public static java.lang.String\ {\bf  addLinebreaks}(\texttt{java.lang.String} {\bf  input})
+\label{personOfInterest.Game.addLinebreaks(java.lang.String)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Break lines in a long string with maximum length of 80
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{input} -- the string need to be broken}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the string with proper breaks 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{addLinebreaks(String, int)}
+{\bf  addLinebreaks}\\
+\texttt{public static java.lang.String\ {\bf  addLinebreaks}(\texttt{java.lang.String} {\bf  input},
+\texttt{int} {\bf  maxLineLength})
+\label{personOfInterest.Game.addLinebreaks(java.lang.String, int)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Break lines in a long string to make display nicer\\ref: \url{http://stackoverflow.com/questions/7528045/large-string-split-into- lines-with-maximum-length-in-java}
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{input} -- the string need to be broken}
+   \item{
+\texttt{maxLineLength} -- the maxium line length to insert break line}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the string with proper breaks 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{displayDate()}
+{\bf  displayDate}\\
+\texttt{public static java.lang.String\ {\bf  displayDate}()
+\label{personOfInterest.Game.displayDate()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Display the date today (as in the game)
+}
+\item{{\bf  Returns} -- 
+the current date in the game 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{help()}
+{\bf  help}\\
+\texttt{public static void\ {\bf  help}() throws java.io.FileNotFoundException
+\label{personOfInterest.Game.help()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Display help information
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{ifGoodCalendar(int\lbrack \rbrack )}
+{\bf  ifGoodCalendar}\\
+\texttt{public static boolean\ {\bf  ifGoodCalendar}(\texttt{int\lbrack \rbrack } {\bf  calendar})
+\label{personOfInterest.Game.ifGoodCalendar(int[])}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Determine if a player complete his/her mission in a certain time
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{calendar} -- the calendar of the player/mission}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+true if the player doesn't fail to comply the calendar; false otherwise 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{input(String)}
+{\bf  input}\\
+\texttt{public static java.lang.String\ {\bf  input}(\texttt{java.lang.String} {\bf  prompt}) throws java.io.IOException
+\label{personOfInterest.Game.input(java.lang.String)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the user's input with space as the delimiter
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{prompt} -- prompt for the user}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the string user entered 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{input(String, int, int)}
+{\bf  input}\\
+\texttt{public static int\ {\bf  input}(\texttt{java.lang.String} {\bf  prompt},
+\texttt{int} {\bf  min},
+\texttt{int} {\bf  max})
+\label{personOfInterest.Game.input(java.lang.String, int, int)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Check if the user's input is valid and return a valid data
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{prompt} -- prompt for the user}
+   \item{
+\texttt{min} -- the minimum value for a valid data}
+   \item{
+\texttt{max} -- the maximum value for a valid data}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+a valid integer data between min and max 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{inputLn(String)}
+{\bf  inputLn}\\
+\texttt{public static java.lang.String\ {\bf  inputLn}(\texttt{java.lang.String} {\bf  prompt})
+\label{personOfInterest.Game.inputLn(java.lang.String)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the user's input with line break as the delimiter
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{prompt} -- prompt for the user}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the string user entered 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{isGameOver(Player)}
+{\bf  isGameOver}\\
+\texttt{public static boolean\ {\bf  isGameOver}(\texttt{Player} {\bf  player})
+\label{personOfInterest.Game.isGameOver(personOfInterest.Player)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Determine if the game is over
+}
+\item{{\bf  Returns} -- 
+true if the player is alive and not completed the game; false otherwise 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{loadFile(String)}
+{\bf  loadFile}\\
+\texttt{public static java.lang.Object\ {\bf  loadFile}(\texttt{java.lang.String} {\bf  prompt}) throws java.io.IOException
+\label{personOfInterest.Game.loadFile(java.lang.String)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Load a serialized file
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{prompt} -- prompt for the user}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the object included in the file 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{locs()}
+{\bf  locs}\\
+\texttt{public static void\ {\bf  locs}() throws java.lang.NumberFormatException, java.io.IOException, java.lang.InterruptedException
+\label{personOfInterest.Game.locs()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Update location information from the csv file
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{main(String\lbrack \rbrack )}
+{\bf  main}\\
+\texttt{public static void\ {\bf  main}(\texttt{java.lang.String\lbrack \rbrack } {\bf  args}) throws java.io.IOException, java.lang.ClassNotFoundException, java.lang.InterruptedException
+\label{personOfInterest.Game.main(java.lang.String[])}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Main program
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{msts()}
+{\bf  msts}\\
+\texttt{public static void\ {\bf  msts}() throws java.lang.NumberFormatException, java.io.IOException, java.lang.InterruptedException
+\label{personOfInterest.Game.msts()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Update location information from the csv file
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{passDay()}
+{\bf  passDay}\\
+\texttt{public static void\ {\bf  passDay}()
+\label{personOfInterest.Game.passDay()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Add 1 day to the calendar
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{passDays(int)}
+{\bf  passDays}\\
+\texttt{public static void\ {\bf  passDays}(\texttt{int} {\bf  days})
+\label{personOfInterest.Game.passDays(int)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Add a certain number of days to the game calendar
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{days} -- the certain number of days}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{pois()}
+{\bf  pois}\\
+\texttt{public static void\ {\bf  pois}() throws java.lang.NumberFormatException, java.io.IOException, java.lang.InterruptedException
+\label{personOfInterest.Game.pois()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Update location information from the csv file
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{prbs()}
+{\bf  prbs}\\
+\texttt{public static void\ {\bf  prbs}() throws java.io.IOException
+\label{personOfInterest.Game.prbs()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Update problems
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{processUserInput(Problem, Player)}
+{\bf  processUserInput}\\
+\texttt{public static boolean\ {\bf  processUserInput}(\texttt{Problem} {\bf  problem},
+\texttt{Player} {\bf  player}) throws java.io.IOException, java.lang.ClassNotFoundException, java.lang.InterruptedException
+\label{personOfInterest.Game.processUserInput(personOfInterest.Problem, personOfInterest.Player)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Process the user's input that intends for a problem
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{problem} -- the problem}
+   \item{
+\texttt{player} -- the player}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+true if the user answers the question correctly; false if answers incorrectly or doesn't answer 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{processUserInput(String, Player)}
+{\bf  processUserInput}\\
+\texttt{public static void\ {\bf  processUserInput}(\texttt{java.lang.String} {\bf  uInput},
+\texttt{Player} {\bf  player}) throws java.io.FileNotFoundException, java.io.IOException, java.lang.ClassNotFoundException, java.lang.InterruptedException
+\label{personOfInterest.Game.processUserInput(java.lang.String, personOfInterest.Player)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Process the user's input
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{uinput} -- the user's input}
+   \item{
+\texttt{player} -- the player}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{randomID()}
+{\bf  randomID}\\
+\texttt{public static int\ {\bf  randomID}()
+\label{personOfInterest.Game.randomID()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Generate a 9-digits id number for agent id, mission id, etc.
+}
+\item{{\bf  Returns} -- 
+the generated 9-digits number 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{randomNum(int, int)}
+{\bf  randomNum}\\
+\texttt{public static int\ {\bf  randomNum}(\texttt{int} {\bf  min},
+\texttt{int} {\bf  max})
+\label{personOfInterest.Game.randomNum(int, int)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Generate a random number in a certain range
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{min} -- the minimum for the number, inclusive}
+   \item{
+\texttt{max} -- the maximum for the number, inclusive}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the generated number 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{saveGame(Player)}
+{\bf  saveGame}\\
+\texttt{public static boolean\ {\bf  saveGame}(\texttt{Player} {\bf  player}) throws java.io.FileNotFoundException, java.io.IOException
+\label{personOfInterest.Game.saveGame(personOfInterest.Player)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Save the game
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{player} -- the game's player}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+true if the saving is a success; false otherwise 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{scciSeal()}
+{\bf  scciSeal}\\
+\texttt{public static void\ {\bf  scciSeal}()
+\label{personOfInterest.Game.scciSeal()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Print SCCI logo
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{showStartPage()}
+{\bf  showStartPage}\\
+\texttt{public static void\ {\bf  showStartPage}()
+\label{personOfInterest.Game.showStartPage()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Show the start page with ASCII art
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{sleep(int)}
+{\bf  sleep}\\
+\texttt{public static void\ {\bf  sleep}(\texttt{int} {\bf  timeInMs}) throws java.lang.InterruptedException
+\label{personOfInterest.Game.sleep(int)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Pause the program for a period of time while outputing three dots\\ref: \url{http://docs.oracle.com/javase/tutorial/essential/concurrency/sleep.html}
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{timeInMs} -- the period of time to be paused for}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{takeChance(double)}
+{\bf  takeChance}\\
+\texttt{public static boolean\ {\bf  takeChance}(\texttt{double} {\bf  chance})
+\label{personOfInterest.Game.takeChance(double)}}%end signature
+}%end item
+\item{ 
+\index{takeChance(int)}
+{\bf  takeChance}\\
+\texttt{public static boolean\ {\bf  takeChance}(\texttt{int} {\bf  divisor})
+\label{personOfInterest.Game.takeChance(int)}}%end signature
+}%end item
+\item{ 
+\index{toBoolean(int)}
+{\bf  toBoolean}\\
+\texttt{public static boolean\ {\bf  toBoolean}(\texttt{int} {\bf  num})
+\label{personOfInterest.Game.toBoolean(int)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Cast int to boolean
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{num} -- the int ready to be casted}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+false if the int is 0; true otherwise 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{transport(Agent, int, Location, Location)}
+{\bf  transport}\\
+\texttt{public static void\ {\bf  transport}(\texttt{Agent} {\bf  agent},
+\texttt{int} {\bf  method},
+\texttt{Location} {\bf  from},
+\texttt{Location} {\bf  to})
+\label{personOfInterest.Game.transport(personOfInterest.Agent, int, personOfInterest.Location, personOfInterest.Location)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Transport an agent from his/her current location to a location requested through a certain way
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{agent} -- the agent that need to be transported}
+   \item{
+\texttt{method} -- the way of transportation; 1 for train, 2 for plane, 3 for normal vehicle and 4 for high-speed rail}
+   \item{
+\texttt{from} -- the current location}
+   \item{
+\texttt{to} -- the location requested}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{typeString(String)}
+{\bf  typeString}\\
+\texttt{public static void\ {\bf  typeString}(\texttt{java.lang.String} {\bf  message}) throws java.lang.InterruptedException
+\label{personOfInterest.Game.typeString(java.lang.String)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Show a string in typewriter style
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{message} -- the string need to be displayed}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\section{\label{personOfInterest.Location}\index{Location}Class Location}{
+\vskip .1in 
+Location\vskip .1in 
+\subsection{Declaration}{
+\small public class Location
+\\ {\bf  extends} java.lang.Object
+\refdefined{java.lang.Object}\\ {\bf  implements} 
+java.io.Serializable}
+\subsection{Field summary}{
+\begin{verse}
+{\bf area} a location's area as the index in AREAS\\
+{\bf AREAS} areas that a location can be included in\\
+{\bf city} city that a location situated\\
+{\bf country} country that a location situated\\
+{\bf description} description of a location\\
+{\bf name} a location's name\\
+{\bf serialVersionUID} serialization id\\
+{\bf sublocations} locations that are in a location\\
+{\bf subNum} the number of sublocations\\
+\end{verse}
+}
+\subsection{Constructor summary}{
+\begin{verse}
+{\bf Location(String, String, String, int, String)} Construct a location with name.\\
+\end{verse}
+}
+\subsection{Method summary}{
+\begin{verse}
+{\bf addSublocation(Location)} Add a sublocation\\
+{\bf addSublocations(Location\lbrack \rbrack )} Add a series of sublocation\\
+\end{verse}
+}
+\subsection{Fields}{
+\begin{itemize}
+\item{
+\index{serialVersionUID}
+\label{personOfInterest.Location.serialVersionUID}private static final long {\bf  serialVersionUID}\begin{itemize}
+\item{\vskip -.9ex 
+serialization id}
+\end{itemize}
+}
+\item{
+\index{name}
+\label{personOfInterest.Location.name} java.lang.String {\bf  name}\begin{itemize}
+\item{\vskip -.9ex 
+a location's name}
+\end{itemize}
+}
+\item{
+\index{area}
+\label{personOfInterest.Location.area} int {\bf  area}\begin{itemize}
+\item{\vskip -.9ex 
+a location's area as the index in AREAS}
+\end{itemize}
+}
+\item{
+\index{city}
+\label{personOfInterest.Location.city} java.lang.String {\bf  city}\begin{itemize}
+\item{\vskip -.9ex 
+city that a location situated}
+\end{itemize}
+}
+\item{
+\index{country}
+\label{personOfInterest.Location.country} java.lang.String {\bf  country}\begin{itemize}
+\item{\vskip -.9ex 
+country that a location situated}
+\end{itemize}
+}
+\item{
+\index{sublocations}
+\label{personOfInterest.Location.sublocations} Location {\bf  sublocations}\begin{itemize}
+\item{\vskip -.9ex 
+locations that are in a location}
+\end{itemize}
+}
+\item{
+\index{subNum}
+\label{personOfInterest.Location.subNum} int {\bf  subNum}\begin{itemize}
+\item{\vskip -.9ex 
+the number of sublocations}
+\end{itemize}
+}
+\item{
+\index{description}
+\label{personOfInterest.Location.description} java.lang.String {\bf  description}\begin{itemize}
+\item{\vskip -.9ex 
+description of a location}
+\end{itemize}
+}
+\item{
+\index{AREAS}
+\label{personOfInterest.Location.AREAS}static final java.lang.String {\bf  AREAS}\begin{itemize}
+\item{\vskip -.9ex 
+areas that a location can be included in}
+\end{itemize}
+}
+\end{itemize}
+}
+\subsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{Location(String, String, String, int, String)}
+{\bf  Location}\\
+\texttt{public\ {\bf  Location}(\texttt{java.lang.String} {\bf  inName},
+\texttt{java.lang.String} {\bf  inCity},
+\texttt{java.lang.String} {\bf  inCountry},
+\texttt{int} {\bf  inArea},
+\texttt{java.lang.String} {\bf  inDescription})
+\label{personOfInterest.Location(java.lang.String, java.lang.String, java.lang.String, int, java.lang.String)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Construct a location with name.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{inName} -- the location's name}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{addSublocation(Location)}
+{\bf  addSublocation}\\
+\texttt{public void\ {\bf  addSublocation}(\texttt{Location} {\bf  subloc})
+\label{personOfInterest.Location.addSublocation(personOfInterest.Location)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Add a sublocation
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{subloc} -- the sublocation that needs to be added}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{addSublocations(Location\lbrack \rbrack )}
+{\bf  addSublocations}\\
+\texttt{public void\ {\bf  addSublocations}(\texttt{Location\lbrack \rbrack } {\bf  sublocs})
+\label{personOfInterest.Location.addSublocations(personOfInterest.Location[])}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Add a series of sublocation
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{sublocs} -- the sublocations that needs to be added}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\section{\label{personOfInterest.Mission}\index{Mission}Class Mission}{
+\vskip .1in 
+Mission of the player\vskip .1in 
+\subsection{Declaration}{
+\small public class Mission
+\\ {\bf  extends} java.lang.Object
+\refdefined{java.lang.Object}}
+\subsection{All known subclasses}{CaughtInTheAct\small{\refdefined{personOfInterest.CaughtInTheAct}}}
+\subsection{Field summary}{
+\begin{verse}
+{\bf arriveMessage} message displayed after arrival\\
+{\bf budget} money that can be used to complete a mission\\
+{\bf calendar} calendar of a mission; time permitted\\
+{\bf completed} if a mission is completed\\
+{\bf dangers} potential dangers of a mission\\
+{\bf description} description of a mission\\
+{\bf location} location that a mission takes place\\
+{\bf minorNum} indication of where minor situations happens\\
+{\bf name} name of a mission\\
+{\bf player} player who is completing a mission\\
+{\bf poi} person of interest in a mission\\
+{\bf points} points that awarded after completion\\
+{\bf problems} situations in a mission\\
+{\bf rank} rank that have abilities to complete a mission\\
+\end{verse}
+}
+\subsection{Constructor summary}{
+\begin{verse}
+{\bf Mission(POI, String, Location, int, int)} Construct a mission\\
+\end{verse}
+}
+\subsection{Method summary}{
+\begin{verse}
+{\bf complete()} Complete a mission\\
+{\bf completing()} Process a mission\\
+{\bf generateFinalMission(int)} Generate a final Mission\\
+{\bf generateMission(int, int)} Generate a random mission\\
+{\bf minorSituation(int)} Execute a customized minor situation\\
+{\bf replaceName(String, Mission)} Replace certain tags in a string with certain variables\\
+\end{verse}
+}
+\subsection{Fields}{
+\begin{itemize}
+\item{
+\index{location}
+\label{personOfInterest.Mission.location} Location {\bf  location}\begin{itemize}
+\item{\vskip -.9ex 
+location that a mission takes place}
+\end{itemize}
+}
+\item{
+\index{name}
+\label{personOfInterest.Mission.name} java.lang.String {\bf  name}\begin{itemize}
+\item{\vskip -.9ex 
+name of a mission}
+\end{itemize}
+}
+\item{
+\index{poi}
+\label{personOfInterest.Mission.poi} POI {\bf  poi}\begin{itemize}
+\item{\vskip -.9ex 
+person of interest in a mission}
+\end{itemize}
+}
+\item{
+\index{completed}
+\label{personOfInterest.Mission.completed} boolean {\bf  completed}\begin{itemize}
+\item{\vskip -.9ex 
+if a mission is completed}
+\end{itemize}
+}
+\item{
+\index{rank}
+\label{personOfInterest.Mission.rank} int {\bf  rank}\begin{itemize}
+\item{\vskip -.9ex 
+rank that have abilities to complete a mission}
+\end{itemize}
+}
+\item{
+\index{budget}
+\label{personOfInterest.Mission.budget} int {\bf  budget}\begin{itemize}
+\item{\vskip -.9ex 
+money that can be used to complete a mission}
+\end{itemize}
+}
+\item{
+\index{calendar}
+\label{personOfInterest.Mission.calendar} int {\bf  calendar}\begin{itemize}
+\item{\vskip -.9ex 
+calendar of a mission; time permitted}
+\end{itemize}
+}
+\item{
+\index{points}
+\label{personOfInterest.Mission.points} int {\bf  points}\begin{itemize}
+\item{\vskip -.9ex 
+points that awarded after completion}
+\end{itemize}
+}
+\item{
+\index{player}
+\label{personOfInterest.Mission.player} Player {\bf  player}\begin{itemize}
+\item{\vskip -.9ex 
+player who is completing a mission}
+\end{itemize}
+}
+\item{
+\index{dangers}
+\label{personOfInterest.Mission.dangers} java.lang.String {\bf  dangers}\begin{itemize}
+\item{\vskip -.9ex 
+potential dangers of a mission}
+\end{itemize}
+}
+\item{
+\index{description}
+\label{personOfInterest.Mission.description} java.lang.String {\bf  description}\begin{itemize}
+\item{\vskip -.9ex 
+description of a mission}
+\end{itemize}
+}
+\item{
+\index{problems}
+\label{personOfInterest.Mission.problems} Problem {\bf  problems}\begin{itemize}
+\item{\vskip -.9ex 
+situations in a mission}
+\end{itemize}
+}
+\item{
+\index{arriveMessage}
+\label{personOfInterest.Mission.arriveMessage} java.lang.String {\bf  arriveMessage}\begin{itemize}
+\item{\vskip -.9ex 
+message displayed after arrival}
+\end{itemize}
+}
+\item{
+\index{minorNum}
+\label{personOfInterest.Mission.minorNum} int {\bf  minorNum}\begin{itemize}
+\item{\vskip -.9ex 
+indication of where minor situations happens}
+\end{itemize}
+}
+\end{itemize}
+}
+\subsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{Mission(POI, String, Location, int, int)}
+{\bf  Mission}\\
+\texttt{public\ {\bf  Mission}(\texttt{POI} {\bf  person},
+\texttt{java.lang.String} {\bf  inname},
+\texttt{Location} {\bf  inloc},
+\texttt{int} {\bf  days},
+\texttt{int} {\bf  inPoints})
+\label{personOfInterest.Mission(personOfInterest.POI, java.lang.String, personOfInterest.Location, int, int)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Construct a mission
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{person} -- the POI in a mission}
+   \item{
+\texttt{inname} -- the name of a mission}
+   \item{
+\texttt{inloc} -- the location of a mission}
+   \item{
+\texttt{days} -- the time limit in days for the mission}
+   \item{
+\texttt{inPoints} -- the points required to complete the mission}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{complete()}
+{\bf  complete}\\
+\texttt{public void\ {\bf  complete}()
+\label{personOfInterest.Mission.complete()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Complete a mission
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{player} -- the player who completed the mission}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{completing()}
+{\bf  completing}\\
+\texttt{public boolean\ {\bf  completing}() throws java.lang.InterruptedException, java.lang.ClassNotFoundException, java.io.IOException
+\label{personOfInterest.Mission.completing()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Process a mission
+}
+\item{{\bf  Returns} -- 
+true if complete the mission; false otherwise 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{generateFinalMission(int)}
+{\bf  generateFinalMission}\\
+\texttt{public static Mission\ {\bf  generateFinalMission}(\texttt{int} {\bf  area}) throws java.io.FileNotFoundException, java.io.IOException, java.lang.ClassNotFoundException
+\label{personOfInterest.Mission.generateFinalMission(int)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Generate a final Mission
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{area} -- the area of the mission}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the generated final mission 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{generateMission(int, int)}
+{\bf  generateMission}\\
+\texttt{public static Mission\ {\bf  generateMission}(\texttt{int} {\bf  area},
+\texttt{int} {\bf  rank}) throws java.io.FileNotFoundException, java.io.IOException, java.lang.ClassNotFoundException
+\label{personOfInterest.Mission.generateMission(int, int)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Generate a random mission
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{area} -- the area of the mission}
+   \item{
+\texttt{rank} -- the rank that the mission is designed for}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+generated mission object 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{minorSituation(int)}
+{\bf  minorSituation}\\
+\texttt{public void\ {\bf  minorSituation}(\texttt{int} {\bf  index}) throws java.lang.InterruptedException
+\label{personOfInterest.Mission.minorSituation(int)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Execute a customized minor situation
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{index} -- the index of the minor situation}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{replaceName(String, Mission)}
+{\bf  replaceName}\\
+\texttt{public static java.lang.String\ {\bf  replaceName}(\texttt{java.lang.String} {\bf  s},
+\texttt{Mission} {\bf  mission})
+\label{personOfInterest.Mission.replaceName(java.lang.String, personOfInterest.Mission)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Replace certain tags in a string with certain variables
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{s} -- the string need to be replaced}
+   \item{
+\texttt{mission} -- the mission that indicate variables}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the string that the certain tags are replaced 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\section{\label{personOfInterest.Person}\index{Person}Class Person}{
+\vskip .1in 
+Person including POI, agents of the organization, and others\vskip .1in 
+\subsection{Declaration}{
+\small public class Person
+\\ {\bf  extends} java.lang.Object
+\refdefined{java.lang.Object}\\ {\bf  implements} 
+java.io.Serializable}
+\subsection{All known subclasses}{Player\small{\refdefined{personOfInterest.Player}}, Agent\small{\refdefined{personOfInterest.Agent}}, POI\small{\refdefined{personOfInterest.POI}}}
+\subsection{Field summary}{
+\begin{verse}
+{\bf ifAlive} person's living status\\
+{\bf location} person's location\\
+{\bf name} person's name\\
+{\bf serialVersionUID} serialization id\\
+\end{verse}
+}
+\subsection{Constructor summary}{
+\begin{verse}
+{\bf Person()} \\
+\end{verse}
+}
+\subsection{Method summary}{
+\begin{verse}
+{\bf displayInfo()} Display a person's information\\
+{\bf kill()} Kill a person\\
+\end{verse}
+}
+\subsection{Fields}{
+\begin{itemize}
+\item{
+\index{serialVersionUID}
+\label{personOfInterest.Person.serialVersionUID}private static final long {\bf  serialVersionUID}\begin{itemize}
+\item{\vskip -.9ex 
+serialization id}
+\end{itemize}
+}
+\item{
+\index{name}
+\label{personOfInterest.Person.name} java.lang.String {\bf  name}\begin{itemize}
+\item{\vskip -.9ex 
+person's name}
+\end{itemize}
+}
+\item{
+\index{ifAlive}
+\label{personOfInterest.Person.ifAlive} boolean {\bf  ifAlive}\begin{itemize}
+\item{\vskip -.9ex 
+person's living status}
+\end{itemize}
+}
+\item{
+\index{location}
+\label{personOfInterest.Person.location} Location {\bf  location}\begin{itemize}
+\item{\vskip -.9ex 
+person's location}
+\end{itemize}
+}
+\end{itemize}
+}
+\subsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{Person()}
+{\bf  Person}\\
+\texttt{public\ {\bf  Person}()
+\label{personOfInterest.Person()}}%end signature
+}%end item
+\end{itemize}
+}
+\subsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{displayInfo()}
+{\bf  displayInfo}\\
+\texttt{public void\ {\bf  displayInfo}()
+\label{personOfInterest.Person.displayInfo()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Display a person's information
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{kill()}
+{\bf  kill}\\
+\texttt{public void\ {\bf  kill}()
+\label{personOfInterest.Person.kill()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Kill a person
+}
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\section{\label{personOfInterest.Player}\index{Player}Class Player}{
+\vskip .1in 
+Player who play the game in the virtual world\\ref: \url{http://docs.oracle.com/javase/tutorial/java/javaOO/index.html}\vskip .1in 
+\subsection{Declaration}{
+\small public class Player
+\\ {\bf  extends} personOfInterest.Agent
+\refdefined{personOfInterest.Agent}}
+\subsection{Field summary}{
+\begin{verse}
+{\bf missionCompleted} number of completed missions\\
+{\bf points} a player's points used in promotion system\\
+{\bf serialVersionUID} serialization id\\
+\end{verse}
+}
+\subsection{Constructor summary}{
+\begin{verse}
+{\bf Player(String, int, Location)} Construct a player with a name, a rank and a base\\
+\end{verse}
+}
+\subsection{Method summary}{
+\begin{verse}
+{\bf demote()} Demote a player\\
+{\bf promote()} Promote a player's rank according to his/her points\\
+\end{verse}
+}
+\subsection{Fields}{
+\begin{itemize}
+\item{
+\index{serialVersionUID}
+\label{personOfInterest.Player.serialVersionUID}private static final long {\bf  serialVersionUID}\begin{itemize}
+\item{\vskip -.9ex 
+serialization id}
+\end{itemize}
+}
+\item{
+\index{missionCompleted}
+\label{personOfInterest.Player.missionCompleted} int {\bf  missionCompleted}\begin{itemize}
+\item{\vskip -.9ex 
+number of completed missions}
+\end{itemize}
+}
+\item{
+\index{points}
+\label{personOfInterest.Player.points} int {\bf  points}\begin{itemize}
+\item{\vskip -.9ex 
+a player's points used in promotion system}
+\end{itemize}
+}
+\end{itemize}
+}
+\subsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{Player(String, int, Location)}
+{\bf  Player}\\
+\texttt{public\ {\bf  Player}(\texttt{java.lang.String} {\bf  inName},
+\texttt{int} {\bf  inRank},
+\texttt{Location} {\bf  inBase})
+\label{personOfInterest.Player(java.lang.String, int, personOfInterest.Location)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Construct a player with a name, a rank and a base
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{inName} -- specified name}
+   \item{
+\texttt{inRank} -- specified rank}
+   \item{
+\texttt{inBase} -- specified base}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{demote()}
+{\bf  demote}\\
+\texttt{public void\ {\bf  demote}()
+\label{personOfInterest.Player.demote()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Demote a player
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{promote()}
+{\bf  promote}\\
+\texttt{public void\ {\bf  promote}()
+\label{personOfInterest.Player.promote()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Promote a player's rank according to his/her points
+}
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsection{Members inherited from class Agent }{
+\texttt{personOfInterest.Agent} {\small 
+\refdefined{personOfInterest.Agent}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{ {\bf  base}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  calendar}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  currentDay}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  displayInfo}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  id}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  passDay}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  passDays}(\texttt{int} {\bf  days})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  rank}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public static final {\bf  RANKS}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  resetCal}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  resetCal}(\texttt{int} {\bf  days})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{private static final {\bf  serialVersionUID}}%end signature
+}%end item
+\end{itemize}
+}
+\subsection{Members inherited from class Person }{
+\texttt{personOfInterest.Person} {\small 
+\refdefined{personOfInterest.Person}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  displayInfo}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  ifAlive}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  kill}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  location}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  name}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{private static final {\bf  serialVersionUID}}%end signature
+}%end item
+\end{itemize}
+}
+}
+\section{\label{personOfInterest.POI}\index{POI}Class POI}{
+\vskip .1in 
+Persons of Interest\\ref: \url{http://docs.oracle.com/javase/tutorial/java/javaOO/index.html}\vskip .1in 
+\subsection{Declaration}{
+\small public class POI
+\\ {\bf  extends} personOfInterest.Person
+\refdefined{personOfInterest.Person}}
+\subsection{Field summary}{
+\begin{verse}
+{\bf area} area of a POI\\
+{\bf id} POI's id number\\
+{\bf ifCriminal} true is the POI is criminal; false otherwise\\
+{\bf serialVersionUID} serialization id\\
+\end{verse}
+}
+\subsection{Constructor summary}{
+\begin{verse}
+{\bf POI(String, boolean)} Construct a POI with a name specifying if he/she is a criminal\\
+\end{verse}
+}
+\subsection{Method summary}{
+\begin{verse}
+{\bf getID()} Get POI's ID\\
+\end{verse}
+}
+\subsection{Fields}{
+\begin{itemize}
+\item{
+\index{serialVersionUID}
+\label{personOfInterest.POI.serialVersionUID}private static final long {\bf  serialVersionUID}\begin{itemize}
+\item{\vskip -.9ex 
+serialization id}
+\end{itemize}
+}
+\item{
+\index{ifCriminal}
+\label{personOfInterest.POI.ifCriminal} boolean {\bf  ifCriminal}\begin{itemize}
+\item{\vskip -.9ex 
+true is the POI is criminal; false otherwise}
+\end{itemize}
+}
+\item{
+\index{id}
+\label{personOfInterest.POI.id} int {\bf  id}\begin{itemize}
+\item{\vskip -.9ex 
+POI's id number}
+\end{itemize}
+}
+\item{
+\index{area}
+\label{personOfInterest.POI.area} int {\bf  area}\begin{itemize}
+\item{\vskip -.9ex 
+area of a POI}
+\end{itemize}
+}
+\end{itemize}
+}
+\subsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{POI(String, boolean)}
+{\bf  POI}\\
+\texttt{public\ {\bf  POI}(\texttt{java.lang.String} {\bf  inName},
+\texttt{boolean} {\bf  criminality})
+\label{personOfInterest.POI(java.lang.String, boolean)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Construct a POI with a name specifying if he/she is a criminal
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{inName} -- POI's name}
+   \item{
+\texttt{criminality} -- true if the POI is a criminal; false otherwise}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getID()}
+{\bf  getID}\\
+\texttt{public int\ {\bf  getID}()
+\label{personOfInterest.POI.getID()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get POI's ID
+}
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsection{Members inherited from class Person }{
+\texttt{personOfInterest.Person} {\small 
+\refdefined{personOfInterest.Person}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  displayInfo}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  ifAlive}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  kill}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  location}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{ {\bf  name}}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{private static final {\bf  serialVersionUID}}%end signature
+}%end item
+\end{itemize}
+}
+}
+\section{\label{personOfInterest.Problem}\index{Problem}Class Problem}{
+\vskip .1in 
+Problem that will occur in a mission\\ref: \url{http://docs.oracle.com/javase/tutorial/java/javaOO/index.html}\vskip .1in 
+\subsection{Declaration}{
+\small public class Problem
+\\ {\bf  extends} java.lang.Object
+\refdefined{java.lang.Object}\\ {\bf  implements} 
+java.io.Serializable}
+\subsection{Field summary}{
+\begin{verse}
+{\bf answer} a problem's answer; might be integer, string, boolean, etc.\\
+{\bf chances} maximum chances to answer a problem\\
+{\bf days} days that a mission used\\
+{\bf description} details of a problem\\
+{\bf goodMessage} message after good answer\\
+{\bf location} location where a problem occurred\\
+{\bf mission} mission that contains a problem\\
+{\bf name} a problem's name\\
+{\bf points} value of a problem in points (promotion system)\\
+{\bf punishment} punishment\\
+{\bf serialVersionUID} serialization id\\
+{\bf type} type of a problem's answer; 0 for int, 1 for double, 2 for boolean, 3 for String\\
+\end{verse}
+}
+\subsection{Constructor summary}{
+\begin{verse}
+{\bf Problem(String, String, int, Object, int, int)} Construct a problem\\
+\end{verse}
+}
+\subsection{Method summary}{
+\begin{verse}
+{\bf getType()} Get a problem's type\\
+{\bf ifCorrect(Object)} Check if a response from a source is correct\\
+{\bf punishment()} Punishment for wrong answers\\
+\end{verse}
+}
+\subsection{Fields}{
+\begin{itemize}
+\item{
+\index{serialVersionUID}
+\label{personOfInterest.Problem.serialVersionUID}private static final long {\bf  serialVersionUID}\begin{itemize}
+\item{\vskip -.9ex 
+serialization id}
+\end{itemize}
+}
+\item{
+\index{mission}
+\label{personOfInterest.Problem.mission} Mission {\bf  mission}\begin{itemize}
+\item{\vskip -.9ex 
+mission that contains a problem}
+\end{itemize}
+}
+\item{
+\index{name}
+\label{personOfInterest.Problem.name} java.lang.String {\bf  name}\begin{itemize}
+\item{\vskip -.9ex 
+a problem's name}
+\end{itemize}
+}
+\item{
+\index{description}
+\label{personOfInterest.Problem.description} java.lang.String {\bf  description}\begin{itemize}
+\item{\vskip -.9ex 
+details of a problem}
+\end{itemize}
+}
+\item{
+\index{answer}
+\label{personOfInterest.Problem.answer} java.lang.Object {\bf  answer}\begin{itemize}
+\item{\vskip -.9ex 
+a problem's answer; might be integer, string, boolean, etc.}
+\end{itemize}
+}
+\item{
+\index{type}
+\label{personOfInterest.Problem.type} int {\bf  type}\begin{itemize}
+\item{\vskip -.9ex 
+type of a problem's answer; 0 for int, 1 for double, 2 for boolean, 3 for String}
+\end{itemize}
+}
+\item{
+\index{location}
+\label{personOfInterest.Problem.location} Location {\bf  location}\begin{itemize}
+\item{\vskip -.9ex 
+location where a problem occurred}
+\end{itemize}
+}
+\item{
+\index{points}
+\label{personOfInterest.Problem.points} int {\bf  points}\begin{itemize}
+\item{\vskip -.9ex 
+value of a problem in points (promotion system)}
+\end{itemize}
+}
+\item{
+\index{chances}
+\label{personOfInterest.Problem.chances} int {\bf  chances}\begin{itemize}
+\item{\vskip -.9ex 
+maximum chances to answer a problem}
+\end{itemize}
+}
+\item{
+\index{goodMessage}
+\label{personOfInterest.Problem.goodMessage} java.lang.String {\bf  goodMessage}\begin{itemize}
+\item{\vskip -.9ex 
+message after good answer}
+\end{itemize}
+}
+\item{
+\index{days}
+\label{personOfInterest.Problem.days} int {\bf  days}\begin{itemize}
+\item{\vskip -.9ex 
+days that a mission used}
+\end{itemize}
+}
+\item{
+\index{punishment}
+\label{personOfInterest.Problem.punishment} java.lang.String {\bf  punishment}\begin{itemize}
+\item{\vskip -.9ex 
+punishment}
+\end{itemize}
+}
+\end{itemize}
+}
+\subsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{Problem(String, String, int, Object, int, int)}
+{\bf  Problem}\\
+\texttt{public\ {\bf  Problem}(\texttt{java.lang.String} {\bf  inName},
+\texttt{java.lang.String} {\bf  inDesc},
+\texttt{int} {\bf  inType},
+\texttt{java.lang.Object} {\bf  inAnswer},
+\texttt{int} {\bf  inPoints},
+\texttt{int} {\bf  inChances})
+\label{personOfInterest.Problem(java.lang.String, java.lang.String, int, java.lang.Object, int, int)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Construct a problem
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{inName} -- problem's name}
+   \item{
+\texttt{inDesc} -- problem's description}
+   \item{
+\texttt{type} -- type of problem answer}
+   \item{
+\texttt{answer} -- problem's answer}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getType()}
+{\bf  getType}\\
+\texttt{public java.lang.String\ {\bf  getType}()
+\label{personOfInterest.Problem.getType()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get a problem's type
+}
+\item{{\bf  Returns} -- 
+the type of the problem 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{ifCorrect(Object)}
+{\bf  ifCorrect}\\
+\texttt{public boolean\ {\bf  ifCorrect}(\texttt{java.lang.Object} {\bf  response})
+\label{personOfInterest.Problem.ifCorrect(java.lang.Object)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Check if a response from a source is correct
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{response} -- the response from the user}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+if the response is consistent with the answer 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{punishment()}
+{\bf  punishment}\\
+\texttt{public boolean\ {\bf  punishment}()
+\label{personOfInterest.Problem.punishment()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Punishment for wrong answers
+}
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\section{\label{personOfInterest.Saved}\index{Saved}Class Saved}{
+\vskip .1in 
+Saved file for the game\vskip .1in 
+\subsection{Declaration}{
+\small public class Saved
+\\ {\bf  extends} java.lang.Object
+\refdefined{java.lang.Object}\\ {\bf  implements} 
+java.io.Serializable}
+\subsection{Field summary}{
+\begin{verse}
+{\bf savedLocation} ocation saved\\
+{\bf savedPlayer} player saved\\
+{\bf serialVersionUID} serialization id\\
+\end{verse}
+}
+\subsection{Constructor summary}{
+\begin{verse}
+{\bf Saved(Player)} Construct a Saved class containing player only\\
+{\bf Saved(Player, Location)} Construct a Saved class containing player and location\\
+\end{verse}
+}
+\subsection{Method summary}{
+\begin{verse}
+{\bf getLocation()} Get the saved location in a class\\
+{\bf getPlayer()} Get the saved player in a class\\
+\end{verse}
+}
+\subsection{Fields}{
+\begin{itemize}
+\item{
+\index{serialVersionUID}
+\label{personOfInterest.Saved.serialVersionUID}private static final long {\bf  serialVersionUID}\begin{itemize}
+\item{\vskip -.9ex 
+serialization id}
+\end{itemize}
+}
+\item{
+\index{savedPlayer}
+\label{personOfInterest.Saved.savedPlayer}public static Player {\bf  savedPlayer}\begin{itemize}
+\item{\vskip -.9ex 
+player saved}
+\end{itemize}
+}
+\item{
+\index{savedLocation}
+\label{personOfInterest.Saved.savedLocation}public static Location {\bf  savedLocation}\begin{itemize}
+\item{\vskip -.9ex 
+ocation saved}
+\end{itemize}
+}
+\end{itemize}
+}
+\subsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{Saved(Player)}
+{\bf  Saved}\\
+\texttt{public\ {\bf  Saved}(\texttt{Player} {\bf  player})
+\label{personOfInterest.Saved(personOfInterest.Player)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Construct a Saved class containing player only
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{player} -- the player intending to be saved}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{Saved(Player, Location)}
+{\bf  Saved}\\
+\texttt{public\ {\bf  Saved}(\texttt{Player} {\bf  player},
+\texttt{Location} {\bf  location})
+\label{personOfInterest.Saved(personOfInterest.Player, personOfInterest.Location)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Construct a Saved class containing player and location
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{player} -- the player intending to be saved}
+   \item{
+\texttt{location} -- the location intending to be saved}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getLocation()}
+{\bf  getLocation}\\
+\texttt{public Location\ {\bf  getLocation}()
+\label{personOfInterest.Saved.getLocation()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the saved location in a class
+}
+\item{{\bf  Returns} -- 
+the saved location 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getPlayer()}
+{\bf  getPlayer}\\
+\texttt{public Player\ {\bf  getPlayer}()
+\label{personOfInterest.Saved.getPlayer()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the saved player in a class
+}
+\item{{\bf  Returns} -- 
+the saved player 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+}
+\printindex

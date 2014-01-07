@@ -1,0 +1,44 @@
+This is a work of fiction. Names, characters, places and incidents either
+are products of the author’s imagination or are used fictitiously. Any
+resemblance to actual events or locales or persons, living or dead, is
+entirely coincidental.
+
+Update Locations, POIs, etc.:
+	Enter -1 for the start menu, than you can update the game.
+
+General commands:
+	- q or quit
+		exit the program immediately without saving
+	- s or save
+		save the game
+	- saveas
+		save the game in a different path if there was a path saved
+	- h or help
+		display help information
+	- load
+		load a saved game
+	- feedback
+		display information about feedback
+	- myinfo
+		display the player's info
+	- date
+		display the date in the game
+	- n or newmission
+		start a new mission
+	- newgame
+		start a new game from the beginning
+
+Answering problems:
+	According to the hint that indicates the answer's type, you should
+solve the problem and enter the result. Correct result will lead to new
+problems and wrong result will lead to repeat the problem or fail the
+mission. For INTEGER and DECIMAL NUMBER, only Arabic number is acceptable;
+for TRUE OR FALSE, only "true" or "false" is acceptable; for WORD(S),
+space is counted, and the spelling should follow:
+	- author'ize' nor author'ise'
+	- col'our' not col'or'
+	- defen'ce' not defen'se'
+	- cance'll'ing not cance'l'ing
+	- cent're' nor cent'er'
+	- -ice as noun and -ise as verb
+Unspecified rules follow American spelling.
