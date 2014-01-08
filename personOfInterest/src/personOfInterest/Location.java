@@ -28,7 +28,7 @@ public class Location implements Serializable {
 	String description;
 	/** areas that a location can be included in */
 	static final String[] AREAS = {"Antarctica", "Asia-Pacific", "Middle East", "North America", "South America",
-		"Europe", "Africa"};
+			"Europe", "Africa"};
 
 	/**
 	 * Construct a location with name.

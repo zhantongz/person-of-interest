@@ -89,9 +89,7 @@ public class Mission {
 				+ (Game.randomNum(Game.poiArea[area], Game.poiArea[area + 2] - 1)) + ".poi"));
 		POI poi = (POI) inpoi.readObject();
 		inpoi.close();
-		if (rank == 1)
-			return new Mission1(poi, "", misLoc, Game.randomNum(10, 15), 40);
-		return null;
+		return new Mission(poi, "", misLoc, Game.randomNum(10, 15), 40, rank);
 	}
 
 	/**
@@ -132,7 +130,7 @@ public class Mission {
 	/**
 	 * Process a mission
 	 * 
-	 * @return	true if complete the mission; false otherwise
+	 * @return true if complete the mission; false otherwise
 	 */
 	public boolean completing() throws InterruptedException, ClassNotFoundException, IOException {
 		int prbNum = 0;
@@ -152,14 +150,16 @@ public class Mission {
 				if (wrongCount % 3 == 0 && wrongCount != 0)
 					System.out.println(replaceName(currentProblem.description, this));
 
-				wrongCount++;
+				if (!Game.processed)
+					wrongCount++;
 				if (wrongCount > currentProblem.chances)
 					currentProblem.punishment();
 				else {
 					System.out.println("The answer is [a(n)] " + currentProblem.getType() + ".");
 					correct = Game.processUserInput(currentProblem, player);
 				}
-			} while (!correct && wrongCount <= currentProblem.chances);
+			} while (!correct && !Game.processed && wrongCount <= currentProblem.chances);
+
 			if (correct) {
 				player.points += currentProblem.points;
 				Game.typeString(Game.addLinebreaks(replaceName(currentProblem.goodMessage, this)));
@@ -209,16 +209,17 @@ public class Mission {
 		}
 		return s;
 	}
-	
+
 	public Mission(POI person, String inname, Location inloc, int days, int inPoints, int rank)
 			throws FileNotFoundException, IOException, ClassNotFoundException {
 		this(person, inname, inloc, days, inPoints);
-		this.rank = 1;
+		this.rank = rank;
 		File[] caughtPrbs = new File("res/prbs/1/").listFiles();
 		this.problems = new Problem[caughtPrbs.length];
 
 		for (int i = 0; i < caughtPrbs.length; i++) {
-			ObjectInputStream inprb = new ObjectInputStream(new FileInputStream("res/prbs/1/" + (i + 1) + ".prb"));
+			ObjectInputStream inprb = new ObjectInputStream(new FileInputStream("res/prbs/" + rank + "/" + (i + 1)
+					+ ".prb"));
 			this.problems[i] = (Problem) inprb.readObject();
 			inprb.close();
 		}

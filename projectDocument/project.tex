@@ -7,6 +7,7 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage{ifthen}
+\usepackage{fancyref}
 \usepackage{makeidx}
 \usepackage[hidelinks,bookmarks,pdfpagelabels,breaklinks=true]{hyperref}
 \def\UrlBreaks{\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J
@@ -64,13 +65,13 @@ height=1cm, text centered, draw=black, fill=green!30, text width=3cm]
 \usepackage{titlesec}
 \titleformat{\chapter}[frame]{\normalfont\huge\bfseries}{\chaptertitlename\
 \thechapter}{20pt}{\huge}
-% \titleformat{\section}{\normalfont\bfseries}{}{0pt}{\Large}
+%\titleformat{\section}{\normalfont\bfseries}{\thesection}{-5pt}{}
 % \titleformat{\subsection}{\normalfont\bfseries}{}{0pt}{\large}
 
 \begin{document}
 \input{./tex/title.tex}
-
 \chapter*{LICENSE}
+\label{chap:LICENSE}
 \thispagestyle{empty}
 \input{./tex/license.tex}
 \addtocounter{page}{-1}
@@ -297,7 +298,6 @@ The following commands are planned as a general commands for the whole game
 instead of a particular mission, those in bracket are shortcut:
 \emph{save} (\emph{s}), \emph{quit} (\emph{q}),\emph{help} (\emph{h}),
 \emph{load}, \emph{myinfo}, and \emph{feedback}.
-\paragraph{Save}
 
 \subsection{Game-ending Decision}
 \begin{tikzpicture}[node distance=2.5cm]
@@ -357,6 +357,9 @@ resources, and \LaTeX\ sources and generated PDFs of the program documents.
 The project binder is also accompanied with a DVD which includes all the
 resources above.
 
+The codes in this project document describes the commit:\\ \indent\indent
+\texttt{\input{|"cd /home/zhantong/git/person-of-interest/; git rev-parse --verify HEAD"}}.
+
 The Java source code and program resources are placed in different directory.
 \texttt{src} is for program source that define how the program work. And
 \texttt{res} is for resources that provide meaningful resources to be processed
@@ -397,12 +400,39 @@ Program resources are not included because of their large sizes and the inabilit
 Over all, this project contains 1056 lines of Java codes.
 % program structure and document
 \chapter{Program Structure}
-The detailed description of classes, constants, methods and variables are listed below, following the alphabetical order of class names. The purpose and the parameter and return value for methods are described in order to provide a development guide for others.
+The detailed description of classes, constants, methods and variables are listed in this chapter, following the alphabetical order of class names. The purpose and the parameter and return value for methods are described in order to provide a development guide for others. This chapter is automatically generated with \texttt{javadoc} using TeXDoclet at \url{http://doclet.github.io/} from the source code.
 \input{./tex/prg.tex}
 \chapter{Program Playability}
+The playability of the game could be assessed from different aspects: playing, story, effects, mechanics and usability.
+
+The game has different missions with different plots. The plots are most adopt from varies of TV dramas, movies, novels and documentaries. The plots are logic and related to mission. The attraction to the gamers is the feeling of being a `hero' saving people and use mind to solve problems. Varies of applied maths, physics and chemistry are presented in the game. The continuous storyline keeps player to complete missions and stay on the game. However, the plots and situations in them are not with much variety due to the limitation of programming skills, game experiences and time.
+
+For a command line game, the effects are not so exciting like in those video-games (e.g. League of Legends, Civilization). But, the game has effects such as typewriter-style output and time-delay/waiting in order to enhance user experience. The user interface are designed so that the player would clear see the description, the task and the expected input. Help command is available for first-timers.
+
+For mechanics of the game, the response to user's input are reasonable and complying with the storyline. There are several accidents happening so the user will not be too boring. The storylines are not out of life context and the player has control over them. \texttt{myinfo} command is available to make player have clear goal and identity his/her status.
+
+The playability of the game can be improved. The improvements are listed in later chapter.
+
 \chapter{Program Expansibility}
 In the process of designing and programming this game, the benefits of letting users to modify and expand the game plot are noticed. The game is programmed that most resources, such as the names of POIs, the descriptions, dangers and arrival messages of missions, the names, cities, countries and descriptions of locations and the names, descriptions, answers and their types, chances, points, punishments and time used of problems, are obtained from CSV files which are easy to modify with spreadsheet softwares. The program portion of the CSV reading is referred to and modified from \url{http://www.mkyong.com/java/how-to-read-and-parse-csv-file-in-java/}, whose author is mkyong. However, the expansibility can be improved if the details of minor situations could be saved in CSV files, while my limited experience and ability stopped me.
 
-The program codes are with comments explaining the purpose of the classes, constants, variables and methods. One with basic knowledge of Java could modify the program easily. There are some variables created but not really used as they are designed because of time and ability limitation for this project. Those variable are useful for future development when the game has more complex plot. The minor situations can be coded for each rank following the example.
-\chapter{Improvement with more Knowledge}
+The program codes are with comments explaining the purpose of the classes, constants, variables and methods. One with basic knowledge of Java could modify the program easily. There are some variables created but not really used as they are designed because of time and ability limitation for this project. Those variable are useful for future development when the game has more complex plot. The minor situations can be coded for each rank following the example. The source code of this program is released, so there could be more people adding location informations (see \hyperref[chap:LICENSE]{LICENSE} on the back of the cover).
+
+\chapter{Initial Design and Final Product\\ and Improvement\\when with more Knowledge\\and time}
+There are several differences between the initial design and the final product. As well, the game can be improved various ways with more time and knowledge. There are also problems with the program existing that could not be fixed with current knowledge.
+
+\section{Problems' Generation and Plots}
+In the initial design, the problems/situations in missions are supposed to be generated randomly, however, the current knowledge and experience of java limits the logic of mission plot. Both variety and storyline are important for a game. But, in the current state of the project, the problems are written in separate mission files in chronological order sacrificing variety. In the future development, the generation should be not only random but also relevant to the missions, and also logic.
+
+Plots of the game are important to players as they provide exciting and challenging feeling for them. The plots' addition is dependent on the creativity and the ability to find appropriate dramas, literature, etc. to adapt. The source code of this program is released, so there could be more people adding location information (see \hyperref[chap:LICENSE]{LICENSE} on the back of the cover).
+
+\section{Detailed Locations}
+There is an idea that a map of a country, a city, or even a building in the city should be outlined. This feature is possible by the unused variable \texttt{Locations[] \textit{sublocations}}. This array stores sublocation data. However, in the process of programming, it is difficult and extremely time-consuming to make and coordinate so many locations and their sublocations. The time limits the program to the current state. But with the improvement of skills, this problem should be less time-consuming as there should be a way to generate them randomly and fast. The source code of this program is released, so there could be more people adding location information (see \hyperref[chap:LICENSE]{LICENSE} on the back of the cover).
+
+\section{``Answer or Command'' }
+In the program, when there is a new situation, the player is asked to solve the situation. Sometimes, the answer could also be a command. At that time, the case is ambiguous. For now, the answer is the priority. However, a better solution should be faced by the players ensuring the player will not be punished because of the program.
+
+\section{Problems' Difficulties}
+The problems are more difficult when the rank increases. The feedback from test players shows that the problems' difficulties are not increased very evenly. Although an effort is made to select problems from different areas, the ability of different people are very diverse and a better selection of problems should be made. Another thought is let the player choose the difficulties, even that the program can generate different players with different attributes (i.e. some are better at algebra, some are better at physics and others are better at chemistry) and select different problems for them.
+
 \end{document}

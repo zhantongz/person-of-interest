@@ -20,12 +20,12 @@ public class Agent extends Person {
 	int rank;
 	/**
 	 * ranks' list
-	 *
+	 * 
 	 * ref:
 	 * http://java.about.com/od/understandingdatatypes/a/Using-Constants.htm
 	 */
 	public final static String[] RANKS = {"", "Constable", "Corporal", "Sergeant", "Staff Sergeant", "Sergeant Major",
-		"Inspector", "Superintendent", "Deputy Commissioner", "Commissioner"};
+			"Inspector", "Superintendent", "Deputy Commissioner", "Commissioner"};
 	/** calendar of an agent */
 	int[] calendar;
 	/** current day in the calendar */

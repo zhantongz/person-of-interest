@@ -36,6 +36,7 @@ public class Game {
 	static int[] poiArea = new int[8];
 	/** if the player wants to start a new mission */
 	static boolean newMission = false;
+	static boolean processed = false;
 
 	/*
 	 * methods for updating the game - start
@@ -294,9 +295,8 @@ public class Game {
 				if (path.equals("")) {
 					path = savedPath;
 					name = savedName;
-				} else {
+				} else
 					name = inputLn("Enter the name that you want to save your game to (overwirtten if exists): ");
-				}
 
 				// create the directory if not exists
 				// ref
@@ -319,6 +319,7 @@ public class Game {
 				success = false;
 			}
 		} while (!success);
+
 		System.out.println("The game is saved successfully to\n"
 				+ new File(path + "/" + name + ".game").getCanonicalPath());
 
@@ -333,11 +334,13 @@ public class Game {
 	 *            the user's input
 	 * @param player
 	 *            the player
+	 * @return true if the input is processed; false otherwise
 	 */
-	public static void processUserInput(String uInput, Player player) throws FileNotFoundException,
-			IOException,
-			ClassNotFoundException,
-			InterruptedException {
+	public static boolean processUserInput(String uInput, Player player) throws FileNotFoundException,
+	IOException,
+	ClassNotFoundException,
+	InterruptedException {
+		processed = false;
 		uInput = uInput.toLowerCase();
 		if (uInput.equals("s") || uInput.equals("save"))
 			saveGame(player);
@@ -365,8 +368,12 @@ public class Game {
 			newMission = true;
 		else if (uInput.equals("newgame"))
 			main(null);
-		else
+		else {
 			System.out.println("Invalid Input or Wrong Answer, enter h or help for help information.");
+			return false;
+		}
+		processed = true;
+		return true;
 	}
 
 	/**
@@ -380,8 +387,9 @@ public class Game {
 	 *         incorrectly or doesn't answer
 	 */
 	public static boolean processUserInput(Problem problem, Player player) throws IOException,
-			ClassNotFoundException,
-			InterruptedException {
+	ClassNotFoundException,
+	InterruptedException {
+		processed = false;
 		String uInput = "";
 		boolean correct = false;
 		try {
@@ -411,7 +419,7 @@ public class Game {
 		}
 
 		if (!correct)
-			processUserInput(uInput, player);
+			processed = processUserInput(uInput, player);
 
 		return correct;
 	}
@@ -803,14 +811,14 @@ public class Game {
 				switch (input("Choose your base location (1 - 3):\n"
 						+ "\t1. Harbin, China (Asia-Pacific and Middle East)\n" + "\t2. Calgary, Canada (Americas)\n"
 						+ "\t3. Lyon, France (Europe and Africa)", 1, 3)) {
-				case 1:
-					baseIndex = 5;
-					break;
-				case 2:
-					baseIndex = 24;
-					break;
-				case 3:
-					baseIndex = 49;
+						case 1:
+							baseIndex = 5;
+							break;
+						case 2:
+							baseIndex = 24;
+							break;
+						case 3:
+							baseIndex = 49;
 				}
 				ObjectInputStream inloc = new ObjectInputStream(new FileInputStream("res/locs/" + baseIndex + ".loc"));
 				base = (Location) inloc.readObject();
@@ -831,20 +839,20 @@ public class Game {
 		} while (!started);
 		player.displayInfo();
 		System.out.println();
-		/*
-		 * typeString(addLinebreaks(" " +
-		 * "SCCI is responsible for security and safety of people by analyzing intelligence from sources all over the world. "
-		 * +
-		 * "Our analysts will provide the profile(s) of Person(s) of Interest (POI) who will be victim(s) or criminal(s). "
-		 * +
-		 * "Special agents of the organization like you will prevent violent crime from the beginning. "
-		 * +
-		 * "Your role is to find and monitor POI, in the event of crime, stop it, help victim(s) and arrest criminal(s)."
-		 * ) +
-		 * "\n\tIf you have any questions about the operation, enter h or help to obtain\n"
-		 * + "help information.\n" + "\tGood luck on your mission.\n" +
-		 * "\t- Director of the Sector of Criminal Controlling Intelligence");
-		 */System.out.print("Enter any key to start your first mission:\n>>");
+
+		typeString(addLinebreaks(" " +
+				"SCCI is responsible for security and safety of people by analyzing intelligence from sources all over the world. "
+				+
+				"Our analysts will provide the profile(s) of Person(s) of Interest (POI) who will be victim(s) or criminal(s). "
+				+
+				"Special agents of the organization like you will prevent violent crime from the beginning. "
+				+
+				"Your role is to find and monitor POI, in the event of crime, stop it, help victim(s) and arrest criminal(s)."
+				) +
+				"\n\tIf you have any questions about the operation, enter h or help to obtain\n"
+				+ "help information.\n" + "\tGood luck on your mission.\n" +
+				"\t- Director of the Sector of Criminal Controlling Intelligence");
+		System.out.print("Enter any key to start your first mission:\n>>");
 		player.location = player.base;
 		input.nextLine();
 		scciSeal();
@@ -894,8 +902,8 @@ public class Game {
 							+ "\n\t1. Train\t2. Airplane\n" + "\t3. Automobile\t4. High-speed rail",
 							1,
 							4),
-					player.location,
-					mission.location);
+							player.location,
+							mission.location);
 			System.out.println();
 			typeString(addLinebreaks(mission.arriveMessage));
 

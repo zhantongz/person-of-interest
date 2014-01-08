@@ -23,7 +23,8 @@ public class Problem implements Serializable {
 	/** a problem's answer; might be integer, string, boolean, etc. */
 	Object answer;
 	/**
-	 * type of a problem's answer; 0 for int, 1 for double, 2 for boolean, 3 for String
+	 * type of a problem's answer; 0 for int, 1 for double, 2 for boolean, 3 for
+	 * String
 	 */
 	int type;
 	/** location where a problem occurred */
