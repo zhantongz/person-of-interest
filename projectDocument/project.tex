@@ -357,9 +357,6 @@ resources, and \LaTeX\ sources and generated PDFs of the program documents.
 The project binder is also accompanied with a DVD which includes all the
 resources above.
 
-The codes in this project document describes the commit:\\ \indent\indent
-\texttt{\input{|"cd /home/zhantong/git/person-of-interest/; git rev-parse --verify HEAD"}}.
-
 The Java source code and program resources are placed in different directory.
 \texttt{src} is for program source that define how the program work. And
 \texttt{res} is for resources that provide meaningful resources to be processed
@@ -392,8 +389,18 @@ by the program.
 \section{Saved.java}
 \lstinputlisting{../personOfInterest/src/personOfInterest/Saved.java}
 
-Program resources are not included because of their large sizes and the inability to show source (like binary files). Those resources can be obtained from the DVD attached and the git repository at \url{https://github.com/zhantongz/person-of-interest}.
+Program resources are not included because of their large sizes and the inability to show source (like binary files). Those resources can be obtained from the DVD attached and the git repository at \url{https://github.com/zhantongz/person-of-interest}. The following are examples of text resources.
+\section{locs.csv}
+This file contains information of locations in the game.
+\lstinputlisting{../personOfInterest/res/locs/locs.csv}
 
+\section{mst/1.csv}
+This file is description for the first mission.
+\lstinputlisting{../personOfInterest/res/msts/1.csv}
+
+\section{prbs/1.csv}
+This file contains problems in the first mission.
+\lstinputlisting{../personOfInterest/res/prbs/1.csv}
 % evaluation
 \part{Evaluation}
 % general evaluation
@@ -434,5 +441,8 @@ In the program, when there is a new situation, the player is asked to solve the 
 
 \section{Problems' Difficulties}
 The problems are more difficult when the rank increases. The feedback from test players shows that the problems' difficulties are not increased very evenly. Although an effort is made to select problems from different areas, the ability of different people are very diverse and a better selection of problems should be made. Another thought is let the player choose the difficulties, even that the program can generate different players with different attributes (i.e. some are better at algebra, some are better at physics and others are better at chemistry) and select different problems for them.
+
+\section{Multi-player and More Characters}
+The feature of multi-player/more characters is made possible by class \texttt{Person} and its subclasses like \texttt{Agent}. Those classes can be extended to add methods for interactions. The intelligence of these characters is a very difficult problem. Multi-player is hard to operate in a command-line environment. But these features can increase the excitement of the game dramaticly.
 
 \end{document}
