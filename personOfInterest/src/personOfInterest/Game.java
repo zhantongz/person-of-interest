@@ -107,6 +107,23 @@ public class Game {
 		}
 		poiArea[7] = index;
 		br.close();
+		
+		file = "res/pois/final/finalPOI.csv";
+		br = null;
+		line = "";
+		br = new BufferedReader(new FileReader(file));
+		index = 1;
+		while ((line = br.readLine()) != null) {
+			String[] poiInfo = line.split(delimiter);
+			ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("res/pois/final/" + index + ".poi"));
+			POI poi = new POI(poiInfo[0], toBoolean(Integer.parseInt(poiInfo[2])));
+			poi.area = Integer.parseInt(poiInfo[1]);
+			output.writeObject(poi);
+			output.close();
+
+			index++;
+		}
+		br.close();
 
 		System.out.println("POIs Updated");
 	}
@@ -290,6 +307,7 @@ public class Game {
 			success = true;
 			try {
 				Saved saved = new Saved(player); // saved file as an object
+				saved.prbNum = Mission.prbNum;
 				// get file info
 				path = inputLn("Enter the path that you want to save your game to (press enter if the same): ");
 				if (path.equals("")) {
@@ -355,7 +373,7 @@ public class Game {
 			help();
 		else if (uInput.equals("load")) {
 			Saved saved = (Saved) loadFile("Enter the path for your saved game: ");
-			player = saved.getPlayer();
+			player = saved.savedPlayer;
 		} else if (uInput.equals("myinfo")) {
 			System.out.println("Today is " + displayDate() + ".");
 			player.displayInfo();
@@ -784,6 +802,7 @@ public class Game {
 		// start the game
 		showStartPage(); // show the start
 		Player player = null; // game's player
+		int prbNum = 0; // default prbNum
 
 		boolean started = false; // if the player has started
 		do {
@@ -830,7 +849,8 @@ public class Game {
 				break;
 			case 2: // load saved game
 				Saved saved = (Saved) loadFile("Enter the path for your saved game: ");
-				player = saved.getPlayer();
+				player = saved.savedPlayer;
+				prbNum = saved.prbNum;
 				started = true; // the player has started the game
 				break;
 			case 3:
@@ -907,7 +927,7 @@ public class Game {
 			System.out.println();
 			typeString(addLinebreaks(mission.arriveMessage));
 
-			if (!mission.completing())
+			if (!mission.completing(prbNum))
 				if (randomNum(1, 10) == 5) {
 					System.out.println(addLinebreaks("You failed to complete mission in required time, "
 							+ "the mission failed as a result. As SCCI need agents who are "
@@ -927,7 +947,8 @@ public class Game {
 						player.points = 5;
 				}
 
-			processUserInput(input(""), player);
+			processUserInput(input("Enter n or newmission for a new mission"), player);
+			prbNum = 0;
 		} while (!isGameOver(player) && newMission);
 	}
 }

@@ -43,6 +43,8 @@ public class Mission {
 	String arriveMessage;
 	/** indication of where minor situations happens */
 	int[] minorNum;
+	/** default number for problem */
+	static int prbNum = 0;
 
 	/**
 	 * 
@@ -130,10 +132,11 @@ public class Mission {
 	/**
 	 * Process a mission
 	 * 
+	 * @param prbsNum the start number of problems in a mission
 	 * @return true if complete the mission; false otherwise
 	 */
-	public boolean completing() throws InterruptedException, ClassNotFoundException, IOException {
-		int prbNum = 0;
+	public boolean completing(int prbsNum) throws InterruptedException, ClassNotFoundException, IOException {
+		prbNum = prbsNum;
 		while (!this.completed) {
 			System.out.println("\nToday is " + Game.displayDate() + ".");
 

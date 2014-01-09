@@ -13,9 +13,13 @@ public class Saved implements Serializable {
 	/** serialization id */
 	private static final long serialVersionUID = -364063165363614855L;
 	/** player saved */
-	public static Player savedPlayer;
-	/** ocation saved */
-	public static Location savedLocation;
+	public Player savedPlayer;
+	/** location saved */
+	public Location savedLocation;
+	/** mission number */
+	public int missionNum;
+	/** problem number */
+	public int prbNum;
 
 	/**
 	 * Construct a Saved class containing player and location
@@ -39,23 +43,5 @@ public class Saved implements Serializable {
 	public Saved(Player player) {
 		savedPlayer = player;
 		savedLocation = null;
-	}
-
-	/**
-	 * Get the saved player in a class
-	 * 
-	 * @return the saved player
-	 */
-	public Player getPlayer() {
-		return savedPlayer;
-	}
-
-	/**
-	 * Get the saved location in a class
-	 * 
-	 * @return the saved location
-	 */
-	public Location getLocation() {
-		return savedLocation;
 	}
 }

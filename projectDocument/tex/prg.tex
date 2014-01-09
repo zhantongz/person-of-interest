@@ -1,25 +1,7 @@
-{\sloppy
-\section{Package personOfInterest}{
-\label{personOfInterest}\hskip -.05in
-\hbox to \hsize{\textit{ Package Contents\hfil Page}}
-\vskip .13in
-\hbox{{\bf  Classes}}
-\entityintro{Agent}{personOfInterest.Agent}{Agent of the organization}
-\entityintro{CaughtInTheAct}{personOfInterest.CaughtInTheAct}{}
-\entityintro{Game}{personOfInterest.Game}{Main game program}
-\entityintro{Location}{personOfInterest.Location}{Location}
-\entityintro{Mission}{personOfInterest.Mission}{Mission of the player}
-\entityintro{Person}{personOfInterest.Person}{Person including POI, agents of the organization, and others}
-\entityintro{Player}{personOfInterest.Player}{Player who play the game in the virtual world}
-\entityintro{POI}{personOfInterest.POI}{Persons of Interest}
-\entityintro{Problem}{personOfInterest.Problem}{Problem that will occur in a mission}
-\entityintro{Saved}{personOfInterest.Saved}{Saved file for the game}
-\vskip .1in
-\vskip .1in
+\sloppy
 \section{\label{personOfInterest.Agent}\index{Agent}Class Agent}{
 \vskip .1in 
-Agent of the organization\\
-ref: \url{http://docs.oracle.com/javase/tutorial/java/javaOO/index.html}\vskip .1in 
+Agent of the organization \\ref: \url{http://docs.oracle.com/javase/tutorial/java/javaOO/index.html}\vskip .1in 
 \subsection{Declaration}{
 \small public class Agent
 \\ {\bf  extends} personOfInterest.Person
@@ -32,7 +14,7 @@ ref: \url{http://docs.oracle.com/javase/tutorial/java/javaOO/index.html}\vskip .
 {\bf currentDay} current day in the calendar\\
 {\bf id} an agent's id number\\
 {\bf rank} rank of an agent\\
-{\bf RANKS} ranks' list\\ref: \url{http://java.about.com/od/understandingdatatypes/a/Using-Constants.htm}\\
+{\bf RANKS} ranks' list \\ref: \url{http://java.about.com/od/understandingdatatypes/a/Using-Constants.htm}\\
 {\bf serialVersionUID} serialization id\\
 \end{verse}
 }
@@ -85,7 +67,7 @@ rank of an agent}
 \index{RANKS}
 \label{personOfInterest.Agent.RANKS}public static final java.lang.String {\bf  RANKS}\begin{itemize}
 \item{\vskip -.9ex 
-ranks' list\\ref: \url{http://java.about.com/od/understandingdatatypes/a/Using-Constants.htm}}
+ranks' list \\ref: \url{http://java.about.com/od/understandingdatatypes/a/Using-Constants.htm}}
 \end{itemize}
 }
 \item{
@@ -271,140 +253,6 @@ Reset calendar of an agent to a certain period
 \end{itemize}
 }
 }
-\section{\label{personOfInterest.CaughtInTheAct}\index{CaughtInTheAct}Class CaughtInTheAct}{
-\vskip .1in 
-\subsection{Declaration}{
-\small  class CaughtInTheAct
-\\ {\bf  extends} personOfInterest.Mission
-\refdefined{personOfInterest.Mission}}
-\subsection{Constructor summary}{
-\begin{verse}
-{\bf CaughtInTheAct(POI, String, Location, int, int)} \\
-\end{verse}
-}
-\subsection{Method summary}{
-\begin{verse}
-{\bf minorSituation(int)} \\
-\end{verse}
-}
-\subsection{Constructors}{
-\vskip -2em
-\begin{itemize}
-\item{ 
-\index{CaughtInTheAct(POI, String, Location, int, int)}
-{\bf  CaughtInTheAct}\\
-\texttt{public\ {\bf  CaughtInTheAct}(\texttt{POI} {\bf  person},
-\texttt{java.lang.String} {\bf  inname},
-\texttt{Location} {\bf  inloc},
-\texttt{int} {\bf  days},
-\texttt{int} {\bf  inPoints}) throws java.io.FileNotFoundException, java.io.IOException, java.lang.ClassNotFoundException
-\label{personOfInterest.CaughtInTheAct(personOfInterest.POI, java.lang.String, personOfInterest.Location, int, int)}}%end signature
-}%end item
-\end{itemize}
-}
-\subsection{Methods}{
-\vskip -2em
-\begin{itemize}
-\item{ 
-\index{minorSituation(int)}
-{\bf  minorSituation}\\
-\texttt{public void\ {\bf  minorSituation}(\texttt{int} {\bf  index}) throws java.lang.InterruptedException
-\label{personOfInterest.CaughtInTheAct.minorSituation(int)}}%end signature
-\begin{itemize}
-\item{
-{\bf  Description copied from Mission{\small \refdefined{personOfInterest.Mission}} }
-
-Execute a customized minor situation
-}
-\item{
-{\bf  Parameters}
-  \begin{itemize}
-   \item{
-\texttt{index} -- the index of the minor situation}
-  \end{itemize}
-}%end item
-\end{itemize}
-}%end item
-\end{itemize}
-}
-\subsection{Members inherited from class Mission }{
-\texttt{personOfInterest.Mission} {\small 
-\refdefined{personOfInterest.Mission}}
-{\small 
-
-\vskip -2em
-\begin{itemize}
-\item{\vskip -1.5ex 
-\texttt{ {\bf  arriveMessage}}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{ {\bf  budget}}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{ {\bf  calendar}}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public void {\bf  complete}()
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{ {\bf  completed}}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public boolean {\bf  completing}() throws java.lang.InterruptedException, java.lang.ClassNotFoundException, java.io.IOException
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{ {\bf  dangers}}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{ {\bf  description}}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public static Mission {\bf  generateFinalMission}(\texttt{int} {\bf  area}) throws java.io.FileNotFoundException, java.io.IOException, java.lang.ClassNotFoundException
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public static Mission {\bf  generateMission}(\texttt{int} {\bf  area},
-\texttt{int} {\bf  rank}) throws java.io.FileNotFoundException, java.io.IOException, java.lang.ClassNotFoundException
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{ {\bf  location}}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{ {\bf  minorNum}}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public void {\bf  minorSituation}(\texttt{int} {\bf  index}) throws java.lang.InterruptedException
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{ {\bf  name}}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{ {\bf  player}}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{ {\bf  poi}}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{ {\bf  points}}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{ {\bf  problems}}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{ {\bf  rank}}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public static String {\bf  replaceName}(\texttt{java.lang.String} {\bf  s},
-\texttt{Mission} {\bf  mission})
-}%end signature
-}%end item
-\end{itemize}
-}
-}
 \section{\label{personOfInterest.Game}\index{Game}Class Game}{
 \vskip .1in 
 Main game program\vskip .1in 
@@ -419,19 +267,15 @@ Main game program\vskip .1in
 {\bf locArea} \\
 {\bf newMission} if the player wants to start a new mission\\
 {\bf poiArea} \\
+{\bf processed} \\
 {\bf savedName} saved name for saving game\\
 {\bf savedPath} saved path for saving game\\
-\end{verse}
-}
-\subsection{Constructor summary}{
-\begin{verse}
-{\bf Game()} \\
 \end{verse}
 }
 \subsection{Method summary}{
 \begin{verse}
 {\bf addLinebreaks(String)} Break lines in a long string with maximum length of 80\\
-{\bf addLinebreaks(String, int)} Break lines in a long string to make display nicer\\ref: \url{http://stackoverflow.com/questions/7528045/large-string-split-into-lines-with-maximum-length-in-java}\\
+{\bf addLinebreaks(String, int)} Break lines in a long string to make display nicer \\ref: \url{http://stackoverflow.com/questions/7528045/large-string-split-into- lines-with-maximum-length-in-java}\\
 {\bf displayDate()} Display the date today (as in the game)\\
 {\bf help()} Display help information\\
 {\bf ifGoodCalendar(int\lbrack \rbrack )} Determine if a player complete his/her mission in a certain time\\
@@ -454,7 +298,7 @@ Main game program\vskip .1in
 {\bf saveGame(Player)} Save the game\\
 {\bf scciSeal()} Print SCCI logo\\
 {\bf showStartPage()} Show the start page with ASCII art\\
-{\bf sleep(int)} Pause the program for a period of time while outputing three dots\\ref: \url{http://docs.oracle.com/javase/tutorial/essential/concurrency/sleep.html}\\
+{\bf sleep(int)} Pause the program for a period of time while outputing three dots \\ref: \url{http://docs.oracle.com/javase/tutorial/essential/concurrency/sleep.html}\\
 {\bf takeChance(double)} \\
 {\bf takeChance(int)} \\
 {\bf toBoolean(int)} Cast int to boolean\\
@@ -505,17 +349,9 @@ game calendar}
 if the player wants to start a new mission}
 \end{itemize}
 }
-\end{itemize}
-}
-\subsection{Constructors}{
-\vskip -2em
-\begin{itemize}
-\item{ 
-\index{Game()}
-{\bf  Game}\\
-\texttt{public\ {\bf  Game}()
-\label{personOfInterest.Game()}}%end signature
-}%end item
+\item{
+\index{processed}
+\label{personOfInterest.Game.processed}static boolean {\bf  processed}}
 \end{itemize}
 }
 \subsection{Methods}{
@@ -554,7 +390,7 @@ the string with proper breaks
 \item{
 {\bf  Description}
 
-Break lines in a long string to make display nicer\\ref: \url{http://stackoverflow.com/questions/7528045/large-string-split-into- lines-with-maximum-length-in-java}
+Break lines in a long string to make display nicer \\ref: \url{http://stackoverflow.com/questions/7528045/large-string-split-into- lines-with-maximum-length-in-java}
 }
 \item{
 {\bf  Parameters}
@@ -863,7 +699,7 @@ true if the user answers the question correctly; false if answers incorrectly or
 \item{ 
 \index{processUserInput(String, Player)}
 {\bf  processUserInput}\\
-\texttt{public static void\ {\bf  processUserInput}(\texttt{java.lang.String} {\bf  uInput},
+\texttt{public static boolean\ {\bf  processUserInput}(\texttt{java.lang.String} {\bf  uInput},
 \texttt{Player} {\bf  player}) throws java.io.FileNotFoundException, java.io.IOException, java.lang.ClassNotFoundException, java.lang.InterruptedException
 \label{personOfInterest.Game.processUserInput(java.lang.String, personOfInterest.Player)}}%end signature
 \begin{itemize}
@@ -880,6 +716,9 @@ Process the user's input
    \item{
 \texttt{player} -- the player}
   \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+true if the input is processed; false otherwise 
 }%end item
 \end{itemize}
 }%end item
@@ -983,7 +822,7 @@ Show the start page with ASCII art
 \item{
 {\bf  Description}
 
-Pause the program for a period of time while outputing three dots\\ref: \url{http://docs.oracle.com/javase/tutorial/essential/concurrency/sleep.html}
+Pause the program for a period of time while outputing three dots \\ref: \url{http://docs.oracle.com/javase/tutorial/essential/concurrency/sleep.html}
 }
 \item{
 {\bf  Parameters}
@@ -1262,7 +1101,6 @@ Mission of the player\vskip .1in
 \small public class Mission
 \\ {\bf  extends} java.lang.Object
 \refdefined{java.lang.Object}}
-\subsection{All known subclasses}{CaughtInTheAct\small{\refdefined{personOfInterest.CaughtInTheAct}}}
 \subsection{Field summary}{
 \begin{verse}
 {\bf arriveMessage} message displayed after arrival\\
@@ -1277,6 +1115,7 @@ Mission of the player\vskip .1in
 {\bf player} player who is completing a mission\\
 {\bf poi} person of interest in a mission\\
 {\bf points} points that awarded after completion\\
+{\bf prbNum} default number for problem\\
 {\bf problems} situations in a mission\\
 {\bf rank} rank that have abilities to complete a mission\\
 \end{verse}
@@ -1284,15 +1123,16 @@ Mission of the player\vskip .1in
 \subsection{Constructor summary}{
 \begin{verse}
 {\bf Mission(POI, String, Location, int, int)} Construct a mission\\
+{\bf Mission(POI, String, Location, int, int, int)} \\
 \end{verse}
 }
 \subsection{Method summary}{
 \begin{verse}
 {\bf complete()} Complete a mission\\
-{\bf completing()} Process a mission\\
+{\bf completing(int)} Process a mission\\
 {\bf generateFinalMission(int)} Generate a final Mission\\
 {\bf generateMission(int, int)} Generate a random mission\\
-{\bf minorSituation(int)} Execute a customized minor situation\\
+{\bf minorSituation(int, int)} Execute a customized minor situation\\
 {\bf replaceName(String, Mission)} Replace certain tags in a string with certain variables\\
 \end{verse}
 }
@@ -1396,6 +1236,13 @@ message displayed after arrival}
 indication of where minor situations happens}
 \end{itemize}
 }
+\item{
+\index{prbNum}
+\label{personOfInterest.Mission.prbNum}static int {\bf  prbNum}\begin{itemize}
+\item{\vskip -.9ex 
+default number for problem}
+\end{itemize}
+}
 \end{itemize}
 }
 \subsection{Constructors}{
@@ -1433,6 +1280,17 @@ Construct a mission
 }%end item
 \end{itemize}
 }%end item
+\item{ 
+\index{Mission(POI, String, Location, int, int, int)}
+{\bf  Mission}\\
+\texttt{public\ {\bf  Mission}(\texttt{POI} {\bf  person},
+\texttt{java.lang.String} {\bf  inname},
+\texttt{Location} {\bf  inloc},
+\texttt{int} {\bf  days},
+\texttt{int} {\bf  inPoints},
+\texttt{int} {\bf  rank}) throws java.io.FileNotFoundException, java.io.IOException, java.lang.ClassNotFoundException
+\label{personOfInterest.Mission(personOfInterest.POI, java.lang.String, personOfInterest.Location, int, int, int)}}%end signature
+}%end item
 \end{itemize}
 }
 \subsection{Methods}{
@@ -1459,16 +1317,23 @@ Complete a mission
 \end{itemize}
 }%end item
 \item{ 
-\index{completing()}
+\index{completing(int)}
 {\bf  completing}\\
-\texttt{public boolean\ {\bf  completing}() throws java.lang.InterruptedException, java.lang.ClassNotFoundException, java.io.IOException
-\label{personOfInterest.Mission.completing()}}%end signature
+\texttt{public boolean\ {\bf  completing}(\texttt{int} {\bf  prbsNum}) throws java.lang.InterruptedException, java.lang.ClassNotFoundException, java.io.IOException
+\label{personOfInterest.Mission.completing(int)}}%end signature
 \begin{itemize}
 \item{
 {\bf  Description}
 
 Process a mission
 }
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{prbsNum} -- the start number of problems in a mission}
+  \end{itemize}
+}%end item
 \item{{\bf  Returns} -- 
 true if complete the mission; false otherwise 
 }%end item
@@ -1524,10 +1389,11 @@ generated mission object
 \end{itemize}
 }%end item
 \item{ 
-\index{minorSituation(int)}
+\index{minorSituation(int, int)}
 {\bf  minorSituation}\\
-\texttt{public void\ {\bf  minorSituation}(\texttt{int} {\bf  index}) throws java.lang.InterruptedException
-\label{personOfInterest.Mission.minorSituation(int)}}%end signature
+\texttt{public void\ {\bf  minorSituation}(\texttt{int} {\bf  rank},
+\texttt{int} {\bf  index}) throws java.lang.InterruptedException
+\label{personOfInterest.Mission.minorSituation(int, int)}}%end signature
 \begin{itemize}
 \item{
 {\bf  Description}
@@ -1677,7 +1543,7 @@ Kill a person
 }
 \section{\label{personOfInterest.Player}\index{Player}Class Player}{
 \vskip .1in 
-Player who play the game in the virtual world\\ref: \url{http://docs.oracle.com/javase/tutorial/java/javaOO/index.html}\vskip .1in 
+Player who play the game in the virtual world \\ref: \url{http://docs.oracle.com/javase/tutorial/java/javaOO/index.html}\vskip .1in 
 \subsection{Declaration}{
 \small public class Player
 \\ {\bf  extends} personOfInterest.Agent
@@ -1869,7 +1735,7 @@ Promote a player's rank according to his/her points
 }
 \section{\label{personOfInterest.POI}\index{POI}Class POI}{
 \vskip .1in 
-Persons of Interest\\ref: \url{http://docs.oracle.com/javase/tutorial/java/javaOO/index.html}\vskip .1in 
+Persons of Interest \\ref: \url{http://docs.oracle.com/javase/tutorial/java/javaOO/index.html}\vskip .1in 
 \subsection{Declaration}{
 \small public class POI
 \\ {\bf  extends} personOfInterest.Person
@@ -2002,7 +1868,7 @@ Get POI's ID
 }
 \section{\label{personOfInterest.Problem}\index{Problem}Class Problem}{
 \vskip .1in 
-Problem that will occur in a mission\\ref: \url{http://docs.oracle.com/javase/tutorial/java/javaOO/index.html}\vskip .1in 
+Problem that will occur in a mission \\ref: \url{http://docs.oracle.com/javase/tutorial/java/javaOO/index.html}\vskip .1in 
 \subsection{Declaration}{
 \small public class Problem
 \\ {\bf  extends} java.lang.Object
@@ -2228,7 +2094,9 @@ Saved file for the game\vskip .1in
 java.io.Serializable}
 \subsection{Field summary}{
 \begin{verse}
-{\bf savedLocation} ocation saved\\
+{\bf missionNum} mission number\\
+{\bf prbNum} problem number\\
+{\bf savedLocation} location saved\\
 {\bf savedPlayer} player saved\\
 {\bf serialVersionUID} serialization id\\
 \end{verse}
@@ -2237,12 +2105,6 @@ java.io.Serializable}
 \begin{verse}
 {\bf Saved(Player)} Construct a Saved class containing player only\\
 {\bf Saved(Player, Location)} Construct a Saved class containing player and location\\
-\end{verse}
-}
-\subsection{Method summary}{
-\begin{verse}
-{\bf getLocation()} Get the saved location in a class\\
-{\bf getPlayer()} Get the saved player in a class\\
 \end{verse}
 }
 \subsection{Fields}{
@@ -2256,16 +2118,30 @@ serialization id}
 }
 \item{
 \index{savedPlayer}
-\label{personOfInterest.Saved.savedPlayer}public static Player {\bf  savedPlayer}\begin{itemize}
+\label{personOfInterest.Saved.savedPlayer}public Player {\bf  savedPlayer}\begin{itemize}
 \item{\vskip -.9ex 
 player saved}
 \end{itemize}
 }
 \item{
 \index{savedLocation}
-\label{personOfInterest.Saved.savedLocation}public static Location {\bf  savedLocation}\begin{itemize}
+\label{personOfInterest.Saved.savedLocation}public Location {\bf  savedLocation}\begin{itemize}
 \item{\vskip -.9ex 
-ocation saved}
+location saved}
+\end{itemize}
+}
+\item{
+\index{missionNum}
+\label{personOfInterest.Saved.missionNum}public int {\bf  missionNum}\begin{itemize}
+\item{\vskip -.9ex 
+mission number}
+\end{itemize}
+}
+\item{
+\index{prbNum}
+\label{personOfInterest.Saved.prbNum}public int {\bf  prbNum}\begin{itemize}
+\item{\vskip -.9ex 
+problem number}
 \end{itemize}
 }
 \end{itemize}
@@ -2318,44 +2194,6 @@ Construct a Saved class containing player and location
 }%end item
 \end{itemize}
 }
-\subsection{Methods}{
-\vskip -2em
-\begin{itemize}
-\item{ 
-\index{getLocation()}
-{\bf  getLocation}\\
-\texttt{public Location\ {\bf  getLocation}()
-\label{personOfInterest.Saved.getLocation()}}%end signature
-\begin{itemize}
-\item{
-{\bf  Description}
-
-Get the saved location in a class
-}
-\item{{\bf  Returns} -- 
-the saved location 
-}%end item
-\end{itemize}
-}%end item
-\item{ 
-\index{getPlayer()}
-{\bf  getPlayer}\\
-\texttt{public Player\ {\bf  getPlayer}()
-\label{personOfInterest.Saved.getPlayer()}}%end signature
-\begin{itemize}
-\item{
-{\bf  Description}
-
-Get the saved player in a class
-}
-\item{{\bf  Returns} -- 
-the saved player 
-}%end item
-\end{itemize}
-}%end item
-\end{itemize}
-}
 }
 }
 \printindex
-}

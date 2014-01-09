@@ -1,4 +1,4 @@
-\documentclass[letterpaper, 12pt]{report}
+\documentclass[letterpaper, 11pt]{report}
 % This is the project summary of the final project for Computer Science 20 at
 % Western Canada High School by Zhantong Zhang in the December of 2013.
 
@@ -61,6 +61,8 @@ height=1cm, text centered, draw=black, fill=green!30, text width=3cm]
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage[T1]{fontenc}
+\usepackage{courier}
 
 \usepackage{titlesec}
 \titleformat{\chapter}[frame]{\normalfont\huge\bfseries}{\chaptertitlename\
@@ -348,14 +350,12 @@ a superintendent?};
 \part{Program Source}
 % list settings
 \lstset{language=Java, numbers=left, breaklines=true, showstringspaces=false,
-basicstyle=\footnotesize\ttfamily, tabsize=2}
+basicstyle=\footnotesize\ttfamily, tabsize=2,keywordstyle=\bfseries}
 % source
 \chapter{Source}
 The source code of the program can be also found at
 \url{https://github.com/zhantongz/person-of-interest} with other program
 resources, and \LaTeX\ sources and generated PDFs of the program documents.
-The project binder is also accompanied with a DVD which includes all the
-resources above.
 
 The Java source code and program resources are placed in different directory.
 \texttt{src} is for program source that define how the program work. And
@@ -389,7 +389,7 @@ by the program.
 \section{Saved.java}
 \lstinputlisting{../personOfInterest/src/personOfInterest/Saved.java}
 
-Program resources are not included because of their large sizes and the inability to show source (like binary files). Those resources can be obtained from the DVD attached and the git repository at \url{https://github.com/zhantongz/person-of-interest}. The following are examples of text resources.
+Program resources are not included because of their large sizes and the inability to show source (like binary files). Those resources will be updated and can be obtained from the git repository at \url{https://github.com/zhantongz/person-of-interest}. The following are examples of text resources.
 \section{locs.csv}
 This file contains information of locations in the game.
 \lstinputlisting{../personOfInterest/res/locs/locs.csv}
@@ -426,7 +426,7 @@ In the process of designing and programming this game, the benefits of letting u
 The program codes are with comments explaining the purpose of the classes, constants, variables and methods. One with basic knowledge of Java could modify the program easily. There are some variables created but not really used as they are designed because of time and ability limitation for this project. Those variable are useful for future development when the game has more complex plot. The minor situations can be coded for each rank following the example. The source code of this program is released, so there could be more people adding location informations (see \hyperref[chap:LICENSE]{LICENSE} on the back of the cover).
 
 \chapter{Initial Design and Final Product\\ and Improvement\\when with more Knowledge\\and time}
-There are several differences between the initial design and the final product. As well, the game can be improved various ways with more time and knowledge. There are also problems with the program existing that could not be fixed with current knowledge.
+There are several differences between the initial design and the final product. As well, the game can be improved various ways with more time and knowledge. There are also problems with the program existing that could not be fixed with current knowledge. The basic indicators of success are met.
 
 \section{Problems' Generation and Plots}
 In the initial design, the problems/situations in missions are supposed to be generated randomly, however, the current knowledge and experience of java limits the logic of mission plot. Both variety and storyline are important for a game. But, in the current state of the project, the problems are written in separate mission files in chronological order sacrificing variety. In the future development, the generation should be not only random but also relevant to the missions, and also logic.
@@ -443,6 +443,6 @@ In the program, when there is a new situation, the player is asked to solve the 
 The problems are more difficult when the rank increases. The feedback from test players shows that the problems' difficulties are not increased very evenly. Although an effort is made to select problems from different areas, the ability of different people are very diverse and a better selection of problems should be made. Another thought is let the player choose the difficulties, even that the program can generate different players with different attributes (i.e. some are better at algebra, some are better at physics and others are better at chemistry) and select different problems for them.
 
 \section{Multi-player and More Characters}
-The feature of multi-player/more characters is made possible by class \texttt{Person} and its subclasses like \texttt{Agent}. Those classes can be extended to add methods for interactions. The intelligence of these characters is a very difficult problem. Multi-player is hard to operate in a command-line environment. But these features can increase the excitement of the game dramaticly.
+The feature of multi-player/more characters is made possible by class \texttt{Person} and its subclasses like \texttt{Agent}. As well, the ranks in \texttt{Agent} make a more complex operation structure of the organization possible. Those classes can be extended to add methods for interactions. The intelligence of these characters is a very difficult problem. Multi-player is hard to operate in a command-line environment. But these features can increase the excitement of the game dramaticly.
 
 \end{document}
